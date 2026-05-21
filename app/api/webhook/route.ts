@@ -1,19 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
-import fs from 'fs/promises';
-import path from 'path';
 
 /**
  * Razorpay webhook receiver.
- * Configure this URL in Razorpay dashboard → Webhooks:
- *   https://YOUR_DOMAIN/api/webhook
- * Set the webhook secret in .env.local as RAZORPAY_WEBHOOK_SECRET.
+ * URL to configure in Razorpay → Webhooks: https://cjpdrip.store/api/webhook
+ * Env var required: RAZORPAY_WEBHOOK_SECRET
  *
- * Subscribed events should include:
+ * Subscribed events:
  *   - payment.captured
  *   - payment.failed
  *   - order.paid
- *   - refund.processed
  */
 export async function POST(req: NextRequest) {
   try {
@@ -22,47 +18,48 @@ export async function POST(req: NextRequest) {
 
     const secret = process.env.RAZORPAY_WEBHOOK_SECRET;
     if (!secret) {
-      console.error('Webhook secret missing');
-      return NextResponse.json({ ok: false }, { status: 500 });
+      console.error('[WEBHOOK] secret env var missing');
+      return NextResponse.json({ ok: false, error: 'Webhook not configured' }, { status: 500 });
     }
 
     const expected = crypto.createHmac('sha256', secret).update(rawBody).digest('hex');
-
     if (expected !== signature) {
-      console.warn('Invalid webhook signature');
+      console.warn('[WEBHOOK] invalid signature');
       return NextResponse.json({ ok: false }, { status: 400 });
     }
 
     const event = JSON.parse(rawBody);
-    const eventType = event.event;
+    const eventType: string = event.event;
 
-    // Log webhook event
-    const dir = path.join(process.cwd(), '.orders');
-    await fs.mkdir(dir, { recursive: true });
-    await fs.writeFile(
-      path.join(dir, `WEBHOOK_${Date.now()}_${eventType}.json`),
-      JSON.stringify(event, null, 2)
-    );
+    console.log('[WEBHOOK]', eventType, JSON.stringify(event.payload || {}).slice(0, 600));
 
-    // Handle events
-    switch (eventType) {
-      case 'payment.captured':
-        console.log('✓ Payment captured:', event.payload.payment.entity.id);
-        // TODO: trigger fulfillment, email customer
-        break;
-      case 'payment.failed':
-        console.log('✗ Payment failed:', event.payload.payment.entity.id);
-        break;
-      case 'order.paid':
-        console.log('✓ Order paid:', event.payload.order.entity.id);
-        break;
-      default:
-        console.log('Webhook received:', eventType);
+    // For captured payments, also forward to the Google Sheet so the user has
+    // an at-a-glance record of every paid order.
+    const sheetUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    if (sheetUrl && eventType === 'payment.captured') {
+      try {
+        const p = event.payload?.payment?.entity || {};
+        const amountInr = p.amount ? p.amount / 100 : 0;
+        const notes = p.notes || {};
+        await fetch(sheetUrl, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            name: notes.customer_name || p.contact || '',
+            email: p.email || '',
+            city: '',
+            reason: `Order ${p.order_id} · ₹${amountInr} · ${p.method || 'paid'} · ${notes.item_count || '?'} items`,
+            source: 'order-paid',
+          }),
+        });
+      } catch (e) {
+        console.error('[WEBHOOK] sheet forward failed:', e);
+      }
     }
 
     return NextResponse.json({ ok: true });
   } catch (err: any) {
-    console.error('Webhook error:', err);
+    console.error('[WEBHOOK] error:', err);
     return NextResponse.json({ ok: false, error: err.message }, { status: 500 });
   }
 }
