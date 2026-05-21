@@ -125,12 +125,13 @@ export default function CockroachCursor() {
         transform: `translate(-50%, -50%) rotate(${angle}deg)`,
         pointerEvents: 'none',
         zIndex: 99999,
-        width: 28,
-        height: 28,
+        width: 30,
+        height: 30,
         willChange: 'transform, left, top',
+        filter: 'drop-shadow(0 0 1.2px rgba(239,230,210,0.95)) drop-shadow(0 0 2px rgba(239,230,210,0.7))',
       }}
     >
-      <svg viewBox="0 0 32 32" width="28" height="28">
+      <svg viewBox="0 0 32 32" width="30" height="30">
         {/* antennae */}
         <path d="M14 5 Q11 3 9 6" fill="none" stroke="#1A1714" strokeWidth="1.3" strokeLinecap="round" />
         <path d="M18 5 Q21 3 23 6" fill="none" stroke="#1A1714" strokeWidth="1.3" strokeLinecap="round" />
