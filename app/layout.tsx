@@ -3,6 +3,7 @@ import './globals.css';
 import { CartProvider } from '@/components/CartProvider';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import CockroachCursor from '@/components/CockroachCursor';
 
 export const metadata: Metadata = {
   title: 'CJP · Merch — Voice of the Lazy & Unemployed',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           {children}
           <Footer />
+          <CockroachCursor />
         </CartProvider>
         {/* Razorpay checkout script loaded globally so it's ready on checkout page */}
         <script src="https://checkout.razorpay.com/v1/checkout.js" async />

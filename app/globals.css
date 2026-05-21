@@ -244,8 +244,9 @@ img { display: block; max-width: 100%; }
 .product-tee-bg .design-canvas {
   position: relative;
   z-index: 1;
-  width: 48% !important;
-  transform: translateY(8%);
+  width: 78% !important;
+  transform: scale(0.5) translateY(8%);
+  transform-origin: center center;
 }
 .product-info { padding: 20px 22px 24px; }
 .product-number { font-family: var(--font-mono); font-size: 11px; opacity: 0.5; letter-spacing: 0.1em; }
@@ -501,3 +502,11 @@ img { display: block; max-width: 100%; }
 }
 .footer-links a { opacity: 0.7; }
 .footer-links a:hover { opacity: 1; text-decoration: underline; }
+
+/* ===== COCKROACH CURSOR ===== */
+@media (pointer: fine) {
+  html, body { cursor: none; }
+  a, button, input, textarea, select, label, .product-card { cursor: none; }
+  /* Keep text cursor in inputs so typing still feels natural */
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea { cursor: text; }
+}
