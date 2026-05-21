@@ -821,3 +821,105 @@ img { display: block; max-width: 100%; }
   .join-form-row { grid-template-columns: 1fr; }
   .join-perks { grid-template-columns: 1fr; }
 }
+
+/* ===== ROACH SIDE POPUPS ===== */
+.roach-popup {
+  position: fixed;
+  top: 35%;
+  z-index: 95;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 18px 18px 16px;
+  width: 280px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+  align-items: start;
+  transition: transform 0.45s cubic-bezier(.22,1.6,.36,1), opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+.roach-popup--left {
+  left: 0;
+  transform: translateX(-110%);
+  border-left: 8px solid var(--red);
+}
+.roach-popup--right {
+  right: 0;
+  transform: translateX(110%);
+  top: 55%;
+  border-right: 8px solid var(--red);
+}
+.roach-popup.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.roach-popup--left.is-visible { transform: translateX(0); }
+.roach-popup--right.is-visible { transform: translateX(0); }
+.roach-popup-close {
+  position: absolute;
+  top: 4px; right: 6px;
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 8px;
+  opacity: 0.5;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.roach-popup-close:hover { opacity: 1; color: var(--red); }
+.roach-popup-icon {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  animation: roach-wiggle 1.8s ease-in-out infinite;
+}
+@keyframes roach-wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg) translateY(-2px); }
+}
+.roach-popup-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+.roach-popup-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.roach-popup-title span { color: var(--red); }
+.roach-popup-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+.roach-popup-cta {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.roach-popup-cta:hover { background: var(--red); border-color: var(--red); }
+@media (max-width: 600px) {
+  .roach-popup { width: 84vw; max-width: 280px; }
+  .roach-popup--right { top: auto; bottom: 100px; }
+}

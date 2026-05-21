@@ -28,7 +28,7 @@ export default function JoinForm() {
       const res = await fetch('/api/join', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, source: 'join-page' }),
       });
       if (!res.ok) throw new Error((await res.json()).error || 'Failed');
       const data = await res.json();
