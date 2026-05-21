@@ -1228,3 +1228,134 @@ img { display: block; max-width: 100%; }
   .predict-live { padding: 22px 18px 18px; margin-bottom: 28px; }
   .predict-live-num { font-size: clamp(40px, 12vw, 68px); }
 }
+
+/* ===== NEWS PAGE ===== */
+.news-page { max-width: 1200px; margin: 0 auto; padding: 70px 28px 100px; }
+.news-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 18px; text-align: center; }
+.news-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(52px, 8vw, 110px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  text-align: center;
+}
+.news-title .red { color: var(--red); }
+.news-tagline { font-size: 17px; max-width: 620px; margin: 0 auto 44px; line-height: 1.5; opacity: 0.9; text-align: center; }
+
+.news-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.news-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+.news-filter:hover { background: var(--cream-dark); }
+.news-filter.is-active { background: var(--ink); color: var(--cream); }
+.news-filter-count {
+  font-size: 10px;
+  padding: 2px 7px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 99px;
+}
+.news-filter.is-active .news-filter-count { background: rgba(239, 230, 210, 0.18); }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 60px;
+}
+.news-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 22px 20px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.15s;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.news-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+  background: var(--cream-dark);
+}
+.news-card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.news-card-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.news-card-date { font-family: var(--font-mono); font-size: 11px; opacity: 0.6; letter-spacing: 0.06em; }
+.news-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.news-card-blurb { font-size: 14px; line-height: 1.5; opacity: 0.85; flex: 1; }
+.news-card-cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-top: 12px;
+  border-top: 1px dashed var(--ink);
+  opacity: 0.85;
+}
+.news-card:hover .news-card-cta { opacity: 1; color: var(--red); }
+
+.news-foot {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 56px 28px;
+  text-align: center;
+  margin: 0 -28px;
+  border-top: 2px solid var(--ink);
+}
+.news-foot-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 14px; }
+.news-foot-title { font-family: var(--font-display); font-size: clamp(34px, 4.5vw, 54px); text-transform: uppercase; margin-bottom: 10px; }
+.news-foot-sub { max-width: 460px; margin: 0 auto 26px; opacity: 0.85; }
+.news-foot-cta {
+  display: inline-block;
+  padding: 14px 24px;
+  background: var(--red);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid var(--red);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.news-foot-cta:hover { background: transparent; color: var(--red); }
+@media (max-width: 900px) { .news-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }

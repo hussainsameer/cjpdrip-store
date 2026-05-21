@@ -14,6 +14,7 @@ export default function Nav() {
       <div className="nav-links">
         <Link href="/" className="nav-link">Shop</Link>
         <Link href="/stickers" className="nav-link">Stickers</Link>
+        <Link href="/news" className="nav-link">News</Link>
         <Link href="/predict" className="nav-link" style={{ color: 'var(--red)' }}>The Bet</Link>
         <Link href="/#manifesto" className="nav-link">Manifesto</Link>
         <a href="https://cockroachjantaparty.org" target="_blank" rel="noopener noreferrer" className="nav-link">The Party ↗</a>

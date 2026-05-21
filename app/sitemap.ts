@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/join',
     '/artists',
     '/predict',
+    '/news',
     '/cart',
     '/checkout',
     '/contact',

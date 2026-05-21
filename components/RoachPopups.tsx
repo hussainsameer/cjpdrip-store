@@ -11,7 +11,7 @@ import { usePathname } from 'next/navigation';
 // clicks the X to dismiss a specific roach, that one is gone for the session.
 // Skipped entirely on cart/checkout/legal pages so we don't interrupt buyers.
 
-const SUPPRESSED_PATHS = ['/cart', '/checkout', '/terms', '/privacy', '/shipping', '/refunds', '/contact', '/artists', '/join', '/predict'];
+const SUPPRESSED_PATHS = ['/cart', '/checkout', '/terms', '/privacy', '/shipping', '/refunds', '/contact', '/artists', '/join', '/predict', '/news'];
 
 const DESIGNER_FORM_URL = '/artists';
 
