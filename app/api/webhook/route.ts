@@ -46,6 +46,23 @@ export async function POST(req: NextRequest) {
           console.log('[WEBHOOK] skipping non-store payment:', p.id);
         } else {
           const amountInr = p.amount ? p.amount / 100 : 0;
+          const phone = notes.customer_phone || p.contact || '';
+          const fullAddress = [notes.address, notes.city, notes.state, notes.pincode]
+            .filter(Boolean)
+            .join(', ');
+          // Cram everything into the Reason field so it works even if the
+          // user's Apps Script only writes the original 6 columns.
+          const reasonFull = [
+            `₹${amountInr}`,
+            notes.items_summary || `${notes.item_count || '?'} items`,
+            phone && `📞 ${phone}`,
+            fullAddress && `📍 ${fullAddress}`,
+            `Order ${p.order_id}`,
+            `Pay ${p.id}`,
+          ]
+            .filter(Boolean)
+            .join(' · ');
+
           await fetch(sheetUrl, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -53,9 +70,10 @@ export async function POST(req: NextRequest) {
               name: notes.customer_name || '',
               email: notes.customer_email || p.email || '',
               city: notes.city || '',
-              reason: `₹${amountInr} · ${notes.items_summary || `${notes.item_count || '?'} items`}`,
+              reason: reasonFull,
               source: 'order-paid',
-              phone: notes.customer_phone || p.contact || '',
+              // Also send structured fields — useful once Apps Script is updated to use them
+              phone,
               address: notes.address || '',
               state: notes.state || '',
               pincode: notes.pincode || '',
