@@ -6,7 +6,7 @@ export type TeeDesign = {
   price: number; // in INR
   tagline: string;
   colors: { name: string; hex: string; label: string }[];
-  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report';
+  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief';
   featured?: boolean;
 };
 
@@ -113,6 +113,48 @@ export const PRODUCTS: TeeDesign[] = [
     tagline: 'F.Y. 2025—26',
     colors: [COLORS.cream, COLORS.white],
     designType: 'report',
+  },
+  {
+    slug: 'address-to-the-nation',
+    name: 'Address to the Nation',
+    subtitle: 'The Podium',
+    description: 'A cockroach in shades, speaking at a podium. Presidential. Unstoppable.',
+    price: 549,
+    tagline: 'MY FELLOW COCKROACHES',
+    colors: [COLORS.black, COLORS.cream],
+    designType: 'podium',
+    featured: true,
+  },
+  {
+    slug: 'cool-under-fire',
+    name: 'Cool Under Fire',
+    subtitle: 'The Shades',
+    description: 'A cockroach with attitude. Sunglasses on. Apocalypse pending.',
+    price: 499,
+    tagline: 'NEVER NOT CHILL',
+    colors: [COLORS.cream, COLORS.black],
+    designType: 'shades',
+  },
+  {
+    slug: 'tricolor-roach',
+    name: 'The Tricolor Roach',
+    subtitle: 'The Flag',
+    description: 'Saffron, white, green — and one cockroach. The national colours, reclaimed.',
+    price: 549,
+    tagline: 'SECULAR · SOCIALIST · LAZY',
+    colors: [COLORS.cream, COLORS.white],
+    designType: 'tricolor',
+    featured: true,
+  },
+  {
+    slug: 'cockroach-in-chief',
+    name: 'Cockroach in Chief',
+    subtitle: 'The Portrait',
+    description: 'A solemn presidential-style portrait. Hang it in the office. Or wear it.',
+    price: 599,
+    tagline: 'EST. 16·MAY·2026',
+    colors: [COLORS.black, COLORS.cream],
+    designType: 'inchief',
   },
 ];
 

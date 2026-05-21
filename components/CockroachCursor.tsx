@@ -32,24 +32,27 @@ export default function CockroachCursor() {
 
     let last = performance.now();
     let raf = 0;
+    let wiggleT = 0;
     const tick = (now: number) => {
       const dt = Math.min((now - last) / 16, 3);
       last = now;
+      wiggleT += dt;
 
-      // Slow constant rotation
-      angleRef.current = (angleRef.current + 0.25 * dt) % 360;
+      // Faster constant rotation + jittery wiggle
+      const wiggle = Math.sin(wiggleT * 0.5) * 6 + (Math.random() - 0.5) * 2;
+      angleRef.current = (angleRef.current + 0.6 * dt) % 360;
 
-      // Autonomous drift when mouse idle > 1.5s
+      // Autonomous drift when mouse idle > 800ms — faster, more alive
       const idle = Date.now() - lastMouseTime.current;
-      if (idle > 1500) {
-        if (Math.random() < 0.04) {
-          drift.current.vx += (Math.random() - 0.5) * 0.6;
-          drift.current.vy += (Math.random() - 0.5) * 0.6;
+      if (idle > 800) {
+        if (Math.random() < 0.12) {
+          drift.current.vx += (Math.random() - 0.5) * 1.8;
+          drift.current.vy += (Math.random() - 0.5) * 1.8;
         }
-        drift.current.vx *= 0.985;
-        drift.current.vy *= 0.985;
+        drift.current.vx *= 0.965;
+        drift.current.vy *= 0.965;
         const speed = Math.hypot(drift.current.vx, drift.current.vy);
-        const maxSpeed = 1.2;
+        const maxSpeed = 3.2;
         if (speed > maxSpeed) {
           drift.current.vx *= maxSpeed / speed;
           drift.current.vy *= maxSpeed / speed;
@@ -63,10 +66,18 @@ export default function CockroachCursor() {
           10,
           Math.min(window.innerHeight - 10, posRef.current.y + drift.current.vy * dt)
         );
-        setPos({ x: posRef.current.x, y: posRef.current.y });
+        // Add per-frame vibration so even drifting roach looks twitchy
+        const vibX = (Math.random() - 0.5) * 2.2;
+        const vibY = (Math.random() - 0.5) * 2.2;
+        setPos({ x: posRef.current.x + vibX, y: posRef.current.y + vibY });
+      } else {
+        // Even when following mouse, add tiny vibration
+        const vibX = (Math.random() - 0.5) * 1.6;
+        const vibY = (Math.random() - 0.5) * 1.6;
+        setPos({ x: posRef.current.x + vibX, y: posRef.current.y + vibY });
       }
 
-      setAngle(angleRef.current);
+      setAngle(angleRef.current + wiggle);
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);

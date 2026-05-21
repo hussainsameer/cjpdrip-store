@@ -510,3 +510,79 @@ img { display: block; max-width: 100%; }
   /* Keep text cursor in inputs so typing still feels natural */
   input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea { cursor: text; }
 }
+
+/* ===== BRAND MASCOT SECTION ===== */
+.mascot-section {
+  background: var(--ink);
+  color: var(--cream);
+  border-bottom: 2px solid var(--ink);
+  padding: 80px 28px;
+}
+.mascot-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.mascot-image-wrap {
+  background: var(--cream);
+  border: 3px solid var(--cream);
+  padding: 18px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.mascot-image-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed var(--ink);
+  pointer-events: none;
+  z-index: 1;
+}
+.mascot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.mascot-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+.mascot-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 5.5vw, 76px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.mascot-title .red { color: var(--red); }
+.mascot-body {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  max-width: 520px;
+  opacity: 0.9;
+}
+.mascot-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .mascot-inner { grid-template-columns: 1fr; gap: 32px; }
+}

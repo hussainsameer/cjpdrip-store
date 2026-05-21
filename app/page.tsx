@@ -30,7 +30,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="hero-meta">
-            <div className="hero-meta-row"><span>Designs</span><span>09</span></div>
+            <div className="hero-meta-row"><span>Designs</span><span>13</span></div>
             <div className="hero-meta-row"><span>Sizes</span><span>S — XXL</span></div>
             <div className="hero-meta-row"><span>Material</span><span>200 GSM Cotton</span></div>
             <div className="hero-meta-row"><span>Print</span><span>Screen, Riso-style</span></div>
@@ -65,14 +65,37 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* BRAND MASCOT */}
+      <section className="mascot-section">
+        <div className="mascot-inner">
+          <div className="mascot-image-wrap">
+            <img src="/brand-mascot.png" alt="Cockroach Janta Party — official mascot" className="mascot-image" />
+          </div>
+          <div className="mascot-text">
+            <div className="mascot-eyebrow">[ The Mascot ]</div>
+            <h2 className="mascot-title">Meet the<br /><span className="red">Cockroach in Chief.</span></h2>
+            <p className="mascot-body">
+              Sunglasses on. Six legs planted. Speaking from a podium that doesn't exist
+              to a nation that doesn't listen. He is the face of the party, the voice of the
+              lazy, the mascot of survival. He will outlive the rest of us. Wear him on your chest.
+            </p>
+            <div className="mascot-tags">
+              <span>★ EST. 16·MAY·2026</span>
+              <span>★ SECULAR · SOCIALIST · DEMOCRATIC · LAZY</span>
+              <span>★ ROACH FIRST. ROZGAR LATER.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRODUCTS */}
       <section className="section-header">
         <div className="section-header-row">
           <div>
             <div className="section-eyebrow">[ The Drop ]</div>
-            <h2 className="section-title">Nine Tees<br />For The People</h2>
+            <h2 className="section-title">Thirteen Tees<br />For The People</h2>
           </div>
-          <div className="section-counter">09 / 09 IN STOCK</div>
+          <div className="section-counter">13 / 13 IN STOCK</div>
         </div>
       </section>
 
