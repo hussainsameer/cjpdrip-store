@@ -19,6 +19,7 @@ export default function Footer() {
             <a href="https://cockroachjantaparty.org" target="_blank" rel="noopener noreferrer">The Party ↗</a>
             <a href="https://www.instagram.com/cockroach_janta_party.merch/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
             <Link href="/artists">Design for Us</Link>
+            <Link href="/predict">The Sunday Bet</Link>
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
