@@ -57,7 +57,7 @@ export default function ShippingPage() {
       <h2>9. Contact</h2>
       <p>
         For shipping queries, email us at{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a>.
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a>.
       </p>
     </main>
   );

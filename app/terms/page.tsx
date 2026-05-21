@@ -77,7 +77,7 @@ export default function TermsPage() {
       <h2>11. Contact</h2>
       <p>
         For questions about these Terms, contact us at{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a>.
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a>.
       </p>
     </main>
   );

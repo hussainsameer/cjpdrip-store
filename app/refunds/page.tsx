@@ -10,7 +10,7 @@ export default function RefundsPage() {
       <p>
         Orders can be cancelled only if they have not yet been processed for shipping. To request
         a cancellation, email us at{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a> with your order number
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a> with your order number
         as soon as possible.
       </p>
       <p>
@@ -30,7 +30,7 @@ export default function RefundsPage() {
         we will replace it free of charge. To request a replacement:
       </p>
       <ul>
-        <li>Email us at <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a> within <strong>7 days</strong> of delivery</li>
+        <li>Email us at <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a> within <strong>7 days</strong> of delivery</li>
         <li>Include your order number, photos of the defect, and a brief description</li>
         <li>The item must be unworn, unwashed, and in original packaging</li>
       </ul>
@@ -63,7 +63,7 @@ export default function RefundsPage() {
       <h2>7. Contact</h2>
       <p>
         For all cancellation, return, or refund requests, email{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a>.
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a>.
       </p>
     </main>
   );

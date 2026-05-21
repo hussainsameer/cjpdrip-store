@@ -14,7 +14,7 @@ export default function ContactPage() {
       <ul>
         <li>
           <strong>Email:</strong>{' '}
-          <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a>
+          <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a>
         </li>
         <li>
           <strong>Phone:</strong> +91 70664 57710
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <h2>Wholesale &amp; Collaborations</h2>
       <p>
         For bulk orders, collaborations, or press enquiries, email{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a> with your details and we
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a> with your details and we
         will get back to you.
       </p>
     </main>

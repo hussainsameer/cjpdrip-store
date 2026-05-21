@@ -59,7 +59,7 @@ export default function PrivacyPage() {
       <p>
         You have the right to access, correct, or request deletion of your personal data. To
         exercise these rights, email us at{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a>.
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a>.
       </p>
 
       <h2>7. Security</h2>
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
       <h2>9. Contact</h2>
       <p>
         For privacy-related questions, write to{' '}
-        <a href="mailto:support@cjpdrip.store">support@cjpdrip.store</a>.
+        <a href="mailto:hussainzsameer@gmail.com">hussainzsameer@gmail.com</a>.
       </p>
     </main>
   );
