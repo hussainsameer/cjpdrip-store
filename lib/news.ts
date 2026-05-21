@@ -161,4 +161,5 @@ export const NEWS_ITEMS: NewsItem[] = [
     blurb: 'The Black Protest Tee, the Manifesto, the Parasite, the Cockroach in Chief — the first 19 designs are live.',
     url: '/',
   },
+  // AUTO_NEWS_BELOW — the bot appends new items here. Do not remove this marker.
 ];

@@ -1,0 +1,40 @@
+name: News Auto-Update
+
+on:
+  schedule:
+    # Runs at 9 AM, 3 PM, and 9 PM IST (= 03:30, 09:30, 15:30 UTC)
+    - cron: '30 3 * * *'
+    - cron: '30 9 * * *'
+    - cron: '30 15 * * *'
+  workflow_dispatch: {} # allow manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  pull-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run news updater
+        run: node scripts/update-news.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "CJP News Bot"
+          git config user.email "news-bot@cjpdrip.store"
+          git add lib/news.ts
+          if git diff --cached --quiet; then
+            echo "No new items to commit."
+          else
+            STAMP=$(date -u +'%Y-%m-%d %H:%M UTC')
+            git commit -m "auto: pull new CJP news ($STAMP)"
+            git push
+          fi
