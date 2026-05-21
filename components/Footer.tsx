@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -8,9 +10,16 @@ export default function Footer() {
             This is an independent satirical merchandise project. Not affiliated with any registered political party.
             All designs are commentary, parody, and protest under Article 19(1)(a). No cockroaches were employed.
           </div>
+          <div className="footer-links">
+            <Link href="/contact">Contact</Link>
+            <Link href="/shipping">Shipping</Link>
+            <Link href="/refunds">Returns &amp; Refunds</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/privacy">Privacy</Link>
+          </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div>© 2026</div>
+          <div>© 2026 CJP Drip</div>
           <div style={{ opacity: 0.5, marginTop: 4 }}>Made in India · Shipped Lazily</div>
         </div>
       </div>
