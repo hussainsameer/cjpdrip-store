@@ -37,14 +37,15 @@ export default function ProductView({ product }: { product: TeeDesignType }) {
   const teeBg = color.hex;
   const teeFg = ['black', 'olive', 'red'].includes(color.name) ? '#EFE6D2' : '#1A1714';
   const isMug = product.category === 'mug';
+  const isSticker = product.category === 'sticker';
   const sizeLabel = isMug ? 'Capacity' : 'Size';
-  const showSizes = !isMug;
+  const showSizes = !isMug && !isSticker;
 
   return (
     <main className="pdp">
       <div>
         <Link href="/" className="pdp-back">Back to shop</Link>
-        <div className={`pdp-image-wrap ${isMug ? 'is-mug' : ''}`} style={{ background: teeBg, color: teeFg }}>
+        <div className={`pdp-image-wrap ${isMug ? 'is-mug' : ''} ${isSticker ? 'is-sticker' : ''}`} style={{ background: teeBg, color: teeFg }}>
           <TeeDesign
             design={product}
             customization={product.personalizable ? { name: pName, exp: pExp } : undefined}
@@ -128,6 +129,8 @@ export default function ProductView({ product }: { product: TeeDesignType }) {
         <div className="pdp-notes">
           {isMug
             ? '[ Ceramic · 350 ml ] · [ Microwave-safe ] · [ Dishwasher-safe ] · [ Print Wraps Front ]'
+            : isSticker
+            ? '[ Matte Vinyl ] · [ Waterproof ] · [ UV-Resistant ] · [ Die-Cut ]'
             : '[ 100% Cotton · 200 GSM ] · [ Screen Printed ] · [ Pre-washed ] · [ Lazily Shipped ]'}
         </div>
       </div>

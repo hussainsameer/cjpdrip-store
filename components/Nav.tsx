@@ -13,6 +13,7 @@ export default function Nav() {
       </Link>
       <div className="nav-links">
         <Link href="/" className="nav-link">Shop</Link>
+        <Link href="/stickers" className="nav-link">Stickers</Link>
         <Link href="/#manifesto" className="nav-link">Manifesto</Link>
         <a href="https://cockroachjantaparty.org" target="_blank" rel="noopener noreferrer" className="nav-link">The Party ↗</a>
         <a

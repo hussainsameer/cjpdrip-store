@@ -6,8 +6,8 @@ export type TeeDesign = {
   price: number; // in INR
   tagline: string;
   colors: { name: string; hex: string; label: string }[];
-  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief' | 'inflation' | 'wifi' | 'censor' | 'pothole' | 'powercut';
-  category?: 'tee' | 'mug';
+  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief' | 'inflation' | 'wifi' | 'censor' | 'pothole' | 'powercut' | 'protest' | 'stickerlogo' | 'stickerpack' | 'stickerbadge';
+  category?: 'tee' | 'mug' | 'sticker';
   featured?: boolean;
   personalizable?: boolean;
 };
@@ -28,6 +28,17 @@ export const SIZES = ['S', 'M', 'L', 'XL', 'XXL'] as const;
 export type Size = typeof SIZES[number];
 
 export const PRODUCTS: TeeDesign[] = [
+  {
+    slug: 'black-protest-tee',
+    name: 'Black Protest Tee',
+    subtitle: 'The Essential',
+    description: 'The starter tee. Pure black cotton, a small red cockroach embroidered on the left chest. Wear it everywhere. Wear it forever.',
+    price: 549,
+    tagline: 'WHERE IT ALL STARTS',
+    colors: [COLORS.black, COLORS.red, COLORS.olive],
+    designType: 'protest',
+    featured: true,
+  },
   {
     slug: 'parasite-of-the-system',
     name: 'Parasite of the System',
@@ -274,6 +285,64 @@ export const PRODUCTS: TeeDesign[] = [
     colors: [COLORS.white, COLORS.black],
     designType: 'wordplay',
     category: 'mug',
+  },
+
+  /* ============ STICKERS ============ */
+  {
+    slug: 'sticker-cjp-logo',
+    name: 'CJP Party Logo Sticker',
+    subtitle: 'The Badge',
+    description: 'The official Cockroach Janta Party logo, vinyl die-cut. Slap it on your laptop, water bottle, helmet — wherever you want a quiet rebellion.',
+    price: 79,
+    tagline: '3" × 3" · WATERPROOF VINYL',
+    colors: [COLORS.white],
+    designType: 'stickerlogo',
+    category: 'sticker',
+    featured: true,
+  },
+  {
+    slug: 'sticker-roach-pack',
+    name: 'Six Roach Pack',
+    subtitle: 'The Swarm',
+    description: 'A pack of six cockroach stickers in different sizes. For when one is not enough.',
+    price: 149,
+    tagline: 'PACK OF 6 · ASSORTED SIZES',
+    colors: [COLORS.white],
+    designType: 'stickerpack',
+    category: 'sticker',
+  },
+  {
+    slug: 'sticker-parasite',
+    name: 'Parasite Badge Sticker',
+    subtitle: 'The Stamp',
+    description: 'The Parasite of the System stamp — as a sticker. Print it. Stick it. Wear it on your laptop.',
+    price: 79,
+    tagline: '3" × 3" · KISS-CUT',
+    colors: [COLORS.white],
+    designType: 'stickerbadge',
+    category: 'sticker',
+  },
+  {
+    slug: 'sticker-main-bhi-cockroach',
+    name: 'Main Bhi Cockroach Sticker',
+    subtitle: 'The Declaration',
+    description: '"मैं भी कॉकरोच" — said in solidarity. Stuck in solidarity. 3-inch die-cut vinyl.',
+    price: 79,
+    tagline: '3" × 3" · DIE-CUT',
+    colors: [COLORS.white],
+    designType: 'solidarity',
+    category: 'sticker',
+  },
+  {
+    slug: 'sticker-roach-before-rozgar',
+    name: 'Roach Before Rozgar Sticker',
+    subtitle: 'The Motto',
+    description: 'The Hinglish motto for an entire generation. Sticker form. 4-inch wide.',
+    price: 79,
+    tagline: '4" × 2" · WATERPROOF',
+    colors: [COLORS.white],
+    designType: 'wordplay',
+    category: 'sticker',
   },
 ];
 

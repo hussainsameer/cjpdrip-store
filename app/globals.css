@@ -953,3 +953,44 @@ img { display: block; max-width: 100%; }
   transition: all 0.15s;
 }
 .mascot-ig:hover { background: var(--red); color: var(--cream); border-color: var(--red); }
+
+/* ===== STICKER SILHOUETTE (replaces tee outline when category=sticker) ===== */
+.product-tee-bg.is-sticker::before,
+.pdp-image-wrap.is-sticker::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g fill='none' stroke='%231A1714' stroke-width='2.2' stroke-linejoin='round' opacity='0.5'><circle cx='100' cy='100' r='80' stroke-dasharray='4 4'/><circle cx='100' cy='100' r='70'/></g></svg>");
+}
+.product-card:hover .product-tee-bg.is-sticker::before { filter: brightness(1.05) contrast(1.06); }
+.product-tee-bg.is-sticker .design-canvas { transform: scale(0.5) translateY(2%); }
+.product-card:hover .product-tee-bg.is-sticker .design-canvas { transform: scale(0.55) translateY(2%); }
+.pdp-image-wrap.is-sticker .design-canvas { width: 60% !important; transform: scale(0.65); }
+
+/* ===== STICKER PAGE NOTE BLOCK ===== */
+.sticker-note {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 80px 28px;
+  border-top: 2px solid var(--ink);
+}
+.sticker-note-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.sticker-note-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 18px;
+}
+.sticker-note-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 5.5vw, 60px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.sticker-note-title .red { color: var(--red); }
+.sticker-note p { font-size: 16px; opacity: 0.9; max-width: 520px; margin: 0 auto; line-height: 1.5; }

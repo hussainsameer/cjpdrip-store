@@ -138,7 +138,7 @@ export default function HomePage() {
       </section>
 
       <div className="products-grid">
-        {PRODUCTS.map((p, i) => (
+        {PRODUCTS.filter(p => p.category !== 'sticker').map((p, i) => (
           <Link key={p.slug} href={`/products/${p.slug}`} className="product-card">
             {p.featured && <div className="featured-badge">Featured</div>}
             <div className={`product-tee-bg ${p.category === 'mug' ? 'is-mug' : ''}`}>

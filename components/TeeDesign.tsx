@@ -210,6 +210,52 @@ const DESIGNS = {
     </div>
   ),
 
+  // Sticker — CJP logo (centered, bold)
+  stickerlogo: () => (
+    <div style={{ textAlign: 'center', width: '100%' }}>
+      <div style={{ width: 110, height: 110, margin: '0 auto', border: '4px solid currentColor', borderRadius: '50%', display: 'grid', placeItems: 'center', position: 'relative' }}>
+        <RoachIcon size={64} />
+      </div>
+      <div style={{ ...D.mono, fontSize: 10, marginTop: 8, letterSpacing: '0.18em', opacity: 0.8 }}>CJP · OFFICIAL</div>
+    </div>
+  ),
+
+  // Sticker pack — multiple roaches
+  stickerpack: () => (
+    <div style={{ width: '100%', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, padding: 8 }}>
+      <div style={{ display: 'grid', placeItems: 'center' }}><RoachIcon size={28} /></div>
+      <div style={{ display: 'grid', placeItems: 'center' }}><RoachIcon size={36} /></div>
+      <div style={{ display: 'grid', placeItems: 'center' }}><RoachIcon size={28} /></div>
+      <div style={{ display: 'grid', placeItems: 'center' }}><RoachIcon size={36} /></div>
+      <div style={{ display: 'grid', placeItems: 'center' }}><RoachIcon size={44} /></div>
+      <div style={{ display: 'grid', placeItems: 'center' }}><RoachIcon size={36} /></div>
+    </div>
+  ),
+
+  // Sticker badge — parasite stamp
+  stickerbadge: () => (
+    <div style={{ textAlign: 'center', border: '3px solid currentColor', padding: '12px 16px', width: '90%' }}>
+      <div style={{ ...D.mono, fontSize: 8, opacity: 0.7 }}>★ CERTIFIED ★</div>
+      <div style={{ ...D.display, fontSize: 'clamp(22px, 5vw, 38px)' }}>PARASITE</div>
+      <div style={{ ...D.mono, fontSize: 9, padding: '4px 0', borderTop: '1px solid currentColor', borderBottom: '1px solid currentColor', margin: '4px 0' }}>OF·THE·SYSTEM</div>
+      <RoachIcon size={32} />
+    </div>
+  ),
+
+  // 0. Black Protest Tee — small red cockroach on left chest
+  protest: () => (
+    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+      <div style={{
+        position: 'absolute',
+        left: '8%',
+        top: '6%',
+        color: '#C8331C',
+      }}>
+        <RoachIcon size={56} />
+      </div>
+    </div>
+  ),
+
   // 14. Inflation Survivor — receipt
   inflation: () => (
     <div style={{ width: '80%', background: 'transparent' }}>
