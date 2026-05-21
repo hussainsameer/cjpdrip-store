@@ -11,10 +11,9 @@ import { usePathname } from 'next/navigation';
 // clicks the X to dismiss a specific roach, that one is gone for the session.
 // Skipped entirely on cart/checkout/legal pages so we don't interrupt buyers.
 
-const SUPPRESSED_PATHS = ['/cart', '/checkout', '/terms', '/privacy', '/shipping', '/refunds', '/contact'];
+const SUPPRESSED_PATHS = ['/cart', '/checkout', '/terms', '/privacy', '/shipping', '/refunds', '/contact', '/artists', '/join'];
 
-// REPLACE THIS with the actual Google Form URL once the user creates it.
-const DESIGNER_FORM_URL = 'https://forms.gle/REPLACE_WITH_YOUR_DESIGNER_FORM';
+const DESIGNER_FORM_URL = '/artists';
 
 export default function RoachPopups() {
   const pathname = usePathname();
@@ -111,8 +110,6 @@ function DesignerRoach({ visible, onDismiss }: { visible: boolean; onDismiss: ()
         <a
           className="roach-popup-cta"
           href={DESIGNER_FORM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           onClick={onDismiss}
         >
           Apply →

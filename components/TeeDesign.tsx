@@ -242,17 +242,10 @@ const DESIGNS = {
     </div>
   ),
 
-  // 0. Black Protest Tee — small red cockroach on left chest
+  // 0. Black Protest Tee — Spiderman-style centered cockroach, black + red
   protest: () => (
-    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-      <div style={{
-        position: 'absolute',
-        left: '8%',
-        top: '6%',
-        color: '#C8331C',
-      }}>
-        <RoachIcon size={56} />
-      </div>
+    <div style={{ width: '100%', height: '100%', display: 'grid', placeItems: 'center' }}>
+      <ProtestRoach size={170} />
     </div>
   ),
 
@@ -426,6 +419,34 @@ function RoachWithShades({ size = 80 }: { size?: number }) {
       <path d="M 58 40 L 72 36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <path d="M 60 52 L 76 54" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <path d="M 58 64 L 68 72" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ProtestRoach({ size = 140 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 80 80" style={{ display: 'block' }}>
+      {/* antennae */}
+      <path d="M 32 16 Q 22 4 14 8" stroke="#1A1714" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M 48 16 Q 58 4 66 8" stroke="#1A1714" strokeWidth="3" fill="none" strokeLinecap="round" />
+      {/* head — black */}
+      <ellipse cx="40" cy="22" rx="14" ry="10" fill="#1A1714" />
+      {/* body — black */}
+      <ellipse cx="40" cy="48" rx="22" ry="28" fill="#1A1714" />
+      {/* RED Spider-man-style stripe across upper body */}
+      <rect x="22" y="40" width="36" height="5" fill="#C8331C" />
+      {/* red center wing line */}
+      <line x1="40" y1="32" x2="40" y2="74" stroke="#C8331C" strokeWidth="2.6" />
+      {/* red eyes */}
+      <ellipse cx="35" cy="22" rx="2.4" ry="1.6" fill="#C8331C" />
+      <ellipse cx="45" cy="22" rx="2.4" ry="1.6" fill="#C8331C" />
+      {/* legs — black */}
+      <path d="M 20 38 L 4 32" stroke="#1A1714" strokeWidth="3" strokeLinecap="round" />
+      <path d="M 18 50 L 2 52" stroke="#1A1714" strokeWidth="3" strokeLinecap="round" />
+      <path d="M 22 62 L 10 72" stroke="#1A1714" strokeWidth="3" strokeLinecap="round" />
+      <path d="M 60 38 L 76 32" stroke="#1A1714" strokeWidth="3" strokeLinecap="round" />
+      <path d="M 62 50 L 78 52" stroke="#1A1714" strokeWidth="3" strokeLinecap="round" />
+      <path d="M 58 62 L 70 72" stroke="#1A1714" strokeWidth="3" strokeLinecap="round" />
     </svg>
   );
 }

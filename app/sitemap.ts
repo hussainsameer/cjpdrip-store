@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/stickers',
     '/join',
+    '/artists',
     '/cart',
     '/checkout',
     '/contact',
