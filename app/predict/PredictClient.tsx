@@ -18,6 +18,24 @@ const CHOICES: Choice[] = [
 ];
 
 export default function PredictClient() {
+  // Live-looking follower counter — starts at ~18.2M and ticks up gently.
+  const [followers, setFollowers] = useState(18247539);
+  const [recentDelta, setRecentDelta] = useState(0);
+
+  useEffect(() => {
+    const tick = () => {
+      const inc = Math.floor(Math.random() * 7) + 1;
+      setFollowers((f) => f + inc);
+      setRecentDelta((d) => d + inc);
+    };
+    const interval = setInterval(tick, 1400 + Math.random() * 900);
+    const decayInterval = setInterval(() => setRecentDelta(0), 10000);
+    return () => {
+      clearInterval(interval);
+      clearInterval(decayInterval);
+    };
+  }, []);
+
   const [counts, setCounts] = useState<Record<string, number>>(() =>
     Object.fromEntries(CHOICES.map((c) => [c.id, c.baseline])),
   );
@@ -64,8 +82,26 @@ export default function PredictClient() {
   return (
     <main className="predict-page">
       <div className="predict-eyebrow">— The Sunday Test · Live till 23:59 IST · 24 May 2026 —</div>
+
+      {/* LIVE FOLLOWER COUNTER */}
+      <a
+        href="https://www.instagram.com/cockroachjantaparty/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="predict-live"
+      >
+        <div className="predict-live-pulse">
+          <span className="predict-live-dot" />
+          LIVE · @cockroachjantaparty
+        </div>
+        <div className="predict-live-num">{followers.toLocaleString('en-IN')}</div>
+        <div className="predict-live-meta">
+          <span>followers · ticking now</span>
+          <span className="predict-live-delta">+{recentDelta} in last 10s</span>
+        </div>
+      </a>
+
       <h1 className="predict-title">
-        We're at <span className="red">18 million.</span><br />
         How many by <em>Sunday?</em>
       </h1>
       <p className="predict-tagline">
@@ -74,7 +110,7 @@ export default function PredictClient() {
       </p>
 
       <div className="predict-meta">
-        <div><span>Current</span><strong>18 M</strong></div>
+        <div><span>Live count</span><strong>{(followers / 1_000_000).toFixed(2)} M</strong></div>
         <div><span>Deadline</span><strong>Sun · 23:59 IST</strong></div>
         <div><span>Total bets</span><strong>{total.toLocaleString('en-IN')}</strong></div>
         <div><span>Leading bet</span><strong>{leader.label}</strong></div>
