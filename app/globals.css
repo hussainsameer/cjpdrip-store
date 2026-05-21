@@ -592,10 +592,16 @@ img { display: block; max-width: 100%; }
 .mascot-title .red { color: var(--red); }
 .mascot-body {
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: 28px;
-  max-width: 520px;
-  opacity: 0.9;
+  max-width: 540px;
+  opacity: 0.92;
+}
+.mascot-body strong {
+  font-weight: 600;
+  color: var(--cream);
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 1px;
 }
 .mascot-tags {
   display: flex;

@@ -97,17 +97,18 @@ export default function HomePage() {
             <img src="/cjp.jpeg" alt="Cockroach Janta Party — official mascot" className="mascot-image" />
           </div>
           <div className="mascot-text">
-            <div className="mascot-eyebrow">[ The Mascot ]</div>
-            <h2 className="mascot-title">Meet the<br /><span className="red">Cockroach in Chief.</span></h2>
+            <div className="mascot-eyebrow">[ The Movement ]</div>
+            <h2 className="mascot-title">A movement,<br /><span className="red">not a meme.</span></h2>
             <p className="mascot-body">
-              Sunglasses on. Six legs planted. Speaking from a podium that doesn't exist
-              to a nation that doesn't listen. He is the face of the party, the voice of the
-              lazy, the mascot of survival. He will outlive the rest of us. Wear him on your chest.
+              We are <strong>secular</strong>. We are <strong>socialist</strong>. We are <strong>democratic</strong>.
+              We are 18 million strong and counting. The Cockroach Janta Party is not a party — it is a verdict.
+              On the unemployed, the silenced, the survivors. The mascot wears shades because we are not afraid.
+              The merch funds the movement. <strong>Wear the verdict.</strong>
             </p>
             <div className="mascot-tags">
               <span>★ EST. 16·MAY·2026</span>
-              <span>★ SECULAR · SOCIALIST · DEMOCRATIC · LAZY</span>
-              <span>★ ROACH FIRST. ROZGAR LATER.</span>
+              <span>★ SECULAR · SOCIALIST · DEMOCRATIC</span>
+              <span>★ FOR THE UNEMPLOYED · THE SILENCED · THE SURVIVORS</span>
             </div>
             <a
               href="https://www.instagram.com/cockroach_janta_party.merch/"
