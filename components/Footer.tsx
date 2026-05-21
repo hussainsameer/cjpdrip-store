@@ -16,6 +16,7 @@ export default function Footer() {
             <Link href="/refunds">Returns &amp; Refunds</Link>
             <Link href="/terms">Terms</Link>
             <Link href="/privacy">Privacy</Link>
+            <a href="https://cockroachjantaparty.org" target="_blank" rel="noopener noreferrer">The Party ↗</a>
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>

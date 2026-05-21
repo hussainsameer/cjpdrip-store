@@ -20,6 +20,7 @@ export default function Nav() {
       <div className="nav-links">
         <Link href="/" className="nav-link">Shop</Link>
         <Link href="/#manifesto" className="nav-link">Manifesto</Link>
+        <a href="https://cockroachjantaparty.org" target="_blank" rel="noopener noreferrer" className="nav-link">The Party ↗</a>
         <Link href="/cart" className="nav-cart">
           Cart
           {ready && count > 0 && <span className="nav-cart-badge">{count}</span>}

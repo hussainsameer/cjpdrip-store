@@ -6,7 +6,7 @@ export type TeeDesign = {
   price: number; // in INR
   tagline: string;
   colors: { name: string; hex: string; label: string }[];
-  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief';
+  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief' | 'inflation' | 'wifi' | 'censor' | 'pothole' | 'powercut';
   featured?: boolean;
 };
 
@@ -161,6 +161,58 @@ export const PRODUCTS: TeeDesign[] = [
     tagline: 'EST. 16·MAY·2026',
     colors: STANDARD_COLORS,
     designType: 'inchief',
+  },
+  {
+    slug: 'inflation-survivor',
+    name: 'Inflation Survivor',
+    subtitle: 'The Receipt',
+    description: 'A grocery receipt printed on cotton. The new inflation indicator.',
+    price: 499,
+    tagline: 'PRICES UP. ROACHES SAME.',
+    colors: STANDARD_COLORS,
+    designType: 'inflation',
+    featured: true,
+  },
+  {
+    slug: 'wifi-greater-than-wages',
+    name: 'WiFi > Wages',
+    subtitle: 'The Equation',
+    description: 'A simple inequality for the modern Indian. Connection matters more than salary.',
+    price: 499,
+    tagline: 'PRIORITIES OF A GENERATION',
+    colors: STANDARD_COLORS,
+    designType: 'wifi',
+  },
+  {
+    slug: 'unmute-the-mic',
+    name: 'Unmute the Mic',
+    subtitle: 'The Protest',
+    description: 'A protest tee against silence. Free speech, with terms and conditions.',
+    price: 549,
+    tagline: 'FREE SPEECH (T&C APPLY)',
+    colors: STANDARD_COLORS,
+    designType: 'censor',
+    featured: true,
+  },
+  {
+    slug: 'pothole-insurance',
+    name: 'Pothole Insurance Co.',
+    subtitle: 'The Coverage',
+    description: 'A mock insurance policy for India\'s deadliest infrastructure feature.',
+    price: 499,
+    tagline: 'EST. EVERY MONSOON',
+    colors: STANDARD_COLORS,
+    designType: 'pothole',
+  },
+  {
+    slug: 'power-cut-champion',
+    name: 'Power Cut Champion',
+    subtitle: 'The Trophy',
+    description: 'For everyone who lived through 8-hour power cuts. Survival, certified.',
+    price: 499,
+    tagline: 'CANDLE-LIT EXPERT',
+    colors: STANDARD_COLORS,
+    designType: 'powercut',
   },
 ];
 

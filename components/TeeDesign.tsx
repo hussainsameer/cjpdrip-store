@@ -198,6 +198,80 @@ const DESIGNS = {
     </div>
   ),
 
+  // 14. Inflation Survivor — receipt
+  inflation: () => (
+    <div style={{ width: '80%', background: 'transparent' }}>
+      <div style={{ ...D.mono, fontSize: 8, textAlign: 'center', opacity: 0.7 }}>—— RECEIPT N° 2026 ——</div>
+      <div style={{ ...D.mono, fontSize: 8, textAlign: 'center', marginBottom: 8, opacity: 0.7 }}>BHARAT KIRANA · GST APPLIED</div>
+      <div style={{ borderTop: '1px dashed currentColor', borderBottom: '1px dashed currentColor', padding: '8px 0', ...D.mono, fontSize: 10, lineHeight: 1.7 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>ATTA 1KG</span><span>₹65</span></div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>DAL 500G</span><span>₹120</span></div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>TOMATO</span><span>₹180</span></div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}><span>HOPE 1 KG</span><span>OUT OF STK</span></div>
+      </div>
+      <div style={{ ...D.display, fontSize: 'clamp(20px, 4.5vw, 36px)', marginTop: 10, textAlign: 'center' }}>INFLATION</div>
+      <div style={{ ...D.display, fontSize: 'clamp(22px, 5vw, 40px)', color: 'var(--red)', textAlign: 'center' }}>SURVIVOR</div>
+    </div>
+  ),
+
+  // 15. WiFi > Wages — inequality
+  wifi: () => (
+    <div style={{ textAlign: 'center', width: '100%' }}>
+      <div style={{ ...D.mono, fontSize: 9, marginBottom: 14, opacity: 0.7 }}>—— THE MODERN INEQUALITY ——</div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+        <div style={{ ...D.display, fontSize: 'clamp(36px, 8vw, 64px)' }}>WiFi</div>
+        <div style={{ ...D.display, fontSize: 'clamp(50px, 10vw, 84px)', color: 'var(--red)' }}>&gt;</div>
+        <div style={{ ...D.display, fontSize: 'clamp(36px, 8vw, 64px)' }}>WAGES</div>
+      </div>
+      <div style={{ ...D.mono, fontSize: 9, marginTop: 14, padding: '4px 14px', border: '1px solid currentColor', display: 'inline-block', opacity: 0.8 }}>VERIFIED · 100% TRUE</div>
+    </div>
+  ),
+
+  // 16. Unmute the Mic — censorship satire
+  censor: () => (
+    <div style={{ textAlign: 'center', width: '100%' }}>
+      <div style={{ ...D.mono, fontSize: 9, marginBottom: 8, opacity: 0.7 }}>[ ARTICLE 19(1)(a) ]</div>
+      <div style={{ position: 'relative', display: 'inline-block', padding: '0 4px' }}>
+        <div style={{ ...D.display, fontSize: 'clamp(34px, 8vw, 64px)' }}>FREE</div>
+        <div style={{ ...D.display, fontSize: 'clamp(34px, 8vw, 64px)' }}>SPEECH</div>
+        <div style={{ position: 'absolute', top: '38%', left: '-8%', right: '-8%', height: 8, background: 'var(--red)', transform: 'rotate(-3deg)' }} />
+      </div>
+      <div style={{ ...D.mono, fontSize: 10, marginTop: 14, padding: '6px 12px', border: '2px solid currentColor', display: 'inline-block' }}>*T&amp;C APPLY</div>
+      <div style={{ ...D.mono, fontSize: 8, marginTop: 8, opacity: 0.6, fontStyle: 'italic' }}>(unmute the mic.)</div>
+    </div>
+  ),
+
+  // 17. Pothole Insurance — mock policy
+  pothole: () => (
+    <div style={{ width: '88%', border: '2px solid currentColor', padding: 14, textAlign: 'center' }}>
+      <div style={{ ...D.mono, fontSize: 8, opacity: 0.7 }}>POLICY №. CJP·2026·PIT</div>
+      <div style={{ height: 1, background: 'currentColor', opacity: 0.5, margin: '8px 0' }} />
+      <div style={{ ...D.display, fontSize: 'clamp(20px, 4.5vw, 34px)' }}>POTHOLE</div>
+      <div style={{ ...D.display, fontSize: 'clamp(20px, 4.5vw, 34px)' }}>INSURANCE</div>
+      <div style={{ ...D.display, fontSize: 'clamp(22px, 5vw, 38px)', color: 'var(--red)' }}>CO. LTD.</div>
+      <div style={{ height: 1, background: 'currentColor', opacity: 0.5, margin: '10px 0' }} />
+      <div style={{ ...D.mono, fontSize: 9, opacity: 0.8 }}>COVERAGE: ALL OF BHARAT</div>
+      <div style={{ ...D.mono, fontSize: 9, opacity: 0.8 }}>VALID: TILL NEXT MONSOON</div>
+      <div style={{ ...D.mono, fontSize: 8, marginTop: 8, opacity: 0.5, fontStyle: 'italic' }}>* claims processed never</div>
+    </div>
+  ),
+
+  // 18. Power Cut Champion — trophy / award
+  powercut: () => (
+    <div style={{ textAlign: 'center', width: '100%' }}>
+      <div style={{ ...D.mono, fontSize: 9, marginBottom: 6, opacity: 0.7 }}>—— NATIONAL AWARD ——</div>
+      <div style={{ ...D.display, fontSize: 'clamp(36px, 7vw, 56px)' }}>★</div>
+      <div style={{ ...D.display, fontSize: 'clamp(24px, 5.5vw, 42px)' }}>POWER CUT</div>
+      <div style={{ ...D.display, fontSize: 'clamp(30px, 7vw, 54px)', color: 'var(--red)' }}>CHAMPION</div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 6, margin: '10px 0' }}>
+        <span style={{ ...D.mono, fontSize: 9, padding: '3px 8px', border: '1px solid currentColor' }}>8 HRS</span>
+        <span style={{ ...D.mono, fontSize: 9, padding: '3px 8px', border: '1px solid currentColor' }}>DAILY</span>
+        <span style={{ ...D.mono, fontSize: 9, padding: '3px 8px', border: '1px solid currentColor' }}>CANDLELIT</span>
+      </div>
+      <div style={{ ...D.mono, fontSize: 8, opacity: 0.6, fontStyle: 'italic' }}>"survived. somehow."</div>
+    </div>
+  ),
+
   // 9. Annual Report Survived — govt doc cover
   report: () => (
     <div style={{ width: '88%', border: '2px solid currentColor', padding: '18px 16px', textAlign: 'center' }}>

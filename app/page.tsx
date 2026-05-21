@@ -30,7 +30,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="hero-meta">
-            <div className="hero-meta-row"><span>Designs</span><span>13</span></div>
+            <div className="hero-meta-row"><span>Designs</span><span>18</span></div>
             <div className="hero-meta-row"><span>Sizes</span><span>S — XXL</span></div>
             <div className="hero-meta-row"><span>Material</span><span>200 GSM Cotton</span></div>
             <div className="hero-meta-row"><span>Print</span><span>Screen, Riso-style</span></div>
@@ -69,7 +69,7 @@ export default function HomePage() {
       <section className="mascot-section">
         <div className="mascot-inner">
           <div className="mascot-image-wrap">
-            <img src="/brand-mascot.png" alt="Cockroach Janta Party — official mascot" className="mascot-image" />
+            <img src="/CJP.png" alt="Cockroach Janta Party — official mascot" className="mascot-image" />
           </div>
           <div className="mascot-text">
             <div className="mascot-eyebrow">[ The Mascot ]</div>
@@ -93,9 +93,9 @@ export default function HomePage() {
         <div className="section-header-row">
           <div>
             <div className="section-eyebrow">[ The Drop ]</div>
-            <h2 className="section-title">Thirteen Tees<br />For The People</h2>
+            <h2 className="section-title">Eighteen Tees<br />For The People</h2>
           </div>
-          <div className="section-counter">13 / 13 IN STOCK</div>
+          <div className="section-counter">18 / 18 IN STOCK</div>
         </div>
       </section>
 
