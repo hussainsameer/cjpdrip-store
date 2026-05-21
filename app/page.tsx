@@ -2,9 +2,34 @@ import Link from 'next/link';
 import { PRODUCTS } from '@/lib/products';
 import { TeeDesign } from '@/components/TeeDesign';
 
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'CJP Drip',
+  url: 'https://cjpdrip.store',
+  logo: 'https://cjpdrip.store/CJP.png',
+  sameAs: ['https://cockroachjantaparty.org'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'hussainzsameer@gmail.com',
+    areaServed: 'IN',
+    availableLanguage: ['English', 'Hindi'],
+  },
+};
+
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'CJP Drip',
+  url: 'https://cjpdrip.store',
+};
+
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }} />
       {/* HERO */}
       <section className="hero">
         <div className="hero-stamp">

@@ -1,95 +1,71 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { getProduct, SIZES, type Size } from '@/lib/products';
-import { TeeDesign } from '@/components/TeeDesign';
-import { useCart } from '@/components/CartProvider';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { getProduct, PRODUCTS } from '@/lib/products';
+import ProductView from './ProductView';
+
+const BASE_URL = 'https://cjpdrip.store';
+
+export async function generateStaticParams() {
+  return PRODUCTS.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const product = getProduct(params.slug);
+  if (!product) return {};
+  const title = `${product.name} · CJP Drip`;
+  const description = `${product.description} ₹${product.price}. Free shipping across India.`;
+  const url = `${BASE_URL}/products/${product.slug}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'CJP Drip',
+      images: [{ url: `${BASE_URL}/CJP.png`, width: 1200, height: 1200, alt: product.name }],
+      locale: 'en_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${BASE_URL}/CJP.png`],
+    },
+  };
+}
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const product = getProduct(slug);
+  const product = getProduct(params.slug);
   if (!product) notFound();
 
-  const router = useRouter();
-  const { add } = useCart();
-  const [size, setSize] = useState<Size>('M');
-  const [color, setColor] = useState(product.colors[0]);
-  const [qty, setQty] = useState(1);
-  const [adding, setAdding] = useState(false);
-
-  const handleAdd = () => {
-    setAdding(true);
-    add({ slug: product.slug, name: product.name, price: product.price, size, color: color.name, qty });
-    setTimeout(() => router.push('/cart'), 350);
+  const productLd = {
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: `${BASE_URL}/CJP.png`,
+    brand: { '@type': 'Brand', name: 'CJP Drip' },
+    sku: product.slug,
+    offers: {
+      '@type': 'Offer',
+      url: `${BASE_URL}/products/${product.slug}`,
+      priceCurrency: 'INR',
+      price: product.price,
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+    },
   };
 
-  // Set tee background based on selected color; light text on dark tees
-  const teeBg = color.hex;
-  const teeFg = ['black', 'olive', 'red'].includes(color.name) ? '#EFE6D2' : '#1A1714';
-
   return (
-    <main className="pdp">
-      <div>
-        <Link href="/" className="pdp-back">Back to shop</Link>
-        <div className="pdp-image-wrap" style={{ background: teeBg, color: teeFg }}>
-          <TeeDesign design={product} />
-        </div>
-      </div>
-
-      <div>
-        <div className="pdp-eyebrow">№ {product.subtitle} · CJP Drop 001</div>
-        <h1 className="pdp-title">{product.name}</h1>
-        <div className="pdp-subtitle">{product.tagline}</div>
-        <p className="pdp-desc">{product.description}</p>
-
-        <div className="pdp-price">
-          <span>₹{product.price}</span>
-          <span className="pdp-price-tax">Incl. GST · Ships in 5–7 days</span>
-        </div>
-
-        <div className="pdp-option-label"><span>Color</span><span>{color.label}</span></div>
-        <div className="pdp-colors">
-          {product.colors.map(c => (
-            <button
-              key={c.name}
-              onClick={() => setColor(c)}
-              className={`pdp-color ${c.name === color.name ? 'active' : ''}`}
-              style={{ background: c.hex }}
-              aria-label={c.label}
-            />
-          ))}
-        </div>
-
-        <div className="pdp-option-label"><span>Size</span><span>Size guide</span></div>
-        <div className="pdp-sizes">
-          {SIZES.map(s => (
-            <button
-              key={s}
-              onClick={() => setSize(s)}
-              className={`pdp-size ${s === size ? 'active' : ''}`}
-            >{s}</button>
-          ))}
-        </div>
-
-        <div className="pdp-option-label"><span>Quantity</span><span /></div>
-        <div className="pdp-qty">
-          <button onClick={() => setQty(q => Math.max(1, q - 1))}>−</button>
-          <div className="pdp-qty-val">{qty}</div>
-          <button onClick={() => setQty(q => q + 1)}>+</button>
-        </div>
-
-        <button className="pdp-add" onClick={handleAdd} disabled={adding}>
-          <span>{adding ? 'Added →' : `Add to Resistance · ₹${product.price * qty}`}</span>
-          <span className="pdp-add-arrow">{adding ? '✓' : '→'}</span>
-        </button>
-
-        <div className="pdp-notes">
-          [ 100% Cotton · 200 GSM ] · [ Screen Printed ] · [ Pre-washed ] · [ Lazily Shipped ]
-        </div>
-      </div>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+      />
+      <ProductView product={product} />
+    </>
   );
 }
