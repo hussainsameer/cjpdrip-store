@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       'Original satirical graphic tees. Secular, Socialist, Democratic, Lazy. Designs from ₹499.',
     url: 'https://cjpdrip.store',
     siteName: 'CJP Drip',
-    images: [{ url: '/CJP.png', width: 1200, height: 1200, alt: 'Cockroach Janta Party' }],
+    images: [{ url: '/cjp.jpeg', width: 1200, height: 1200, alt: 'Cockroach Janta Party' }],
     locale: 'en_IN',
     type: 'website',
   },
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CJP Drip — Cockroach Janta Party Merch',
     description: 'Satirical tees. Voice of the Lazy. From ₹499.',
-    images: ['/CJP.png'],
+    images: ['/cjp.jpeg'],
   },
   robots: { index: true, follow: true },
-  icons: { icon: '/CJP.png' },
+  icons: { icon: '/cjp.jpeg' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

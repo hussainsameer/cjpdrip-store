@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description,
       url,
       siteName: 'CJP Drip',
-      images: [{ url: `${BASE_URL}/CJP.png`, width: 1200, height: 1200, alt: product.name }],
+      images: [{ url: `${BASE_URL}/cjp.jpeg`, width: 1200, height: 1200, alt: product.name }],
       locale: 'en_IN',
       type: 'website',
     },
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       card: 'summary_large_image',
       title,
       description,
-      images: [`${BASE_URL}/CJP.png`],
+      images: [`${BASE_URL}/cjp.jpeg`],
     },
   };
 }
@@ -46,7 +46,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: `${BASE_URL}/CJP.png`,
+    image: `${BASE_URL}/cjp.jpeg`,
     brand: { '@type': 'Brand', name: 'CJP Drip' },
     sku: product.slug,
     offers: {

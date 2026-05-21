@@ -7,7 +7,7 @@ const orgLd = {
   '@type': 'Organization',
   name: 'CJP Drip',
   url: 'https://cjpdrip.store',
-  logo: 'https://cjpdrip.store/CJP.png',
+  logo: 'https://cjpdrip.store/cjp.jpeg',
   sameAs: ['https://cockroachjantaparty.org'],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -94,7 +94,7 @@ export default function HomePage() {
       <section className="mascot-section">
         <div className="mascot-inner">
           <div className="mascot-image-wrap">
-            <img src="/CJP.png" alt="Cockroach Janta Party — official mascot" className="mascot-image" />
+            <img src="/cjp.jpeg" alt="Cockroach Janta Party — official mascot" className="mascot-image" />
           </div>
           <div className="mascot-text">
             <div className="mascot-eyebrow">[ The Mascot ]</div>
