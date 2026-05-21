@@ -1,0 +1,119 @@
+export type TeeDesign = {
+  slug: string;
+  name: string;
+  subtitle: string;
+  description: string;
+  price: number; // in INR
+  tagline: string;
+  colors: { name: string; hex: string; label: string }[];
+  designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report';
+  featured?: boolean;
+};
+
+export const COLORS = {
+  cream: { name: 'cream', hex: '#EFE6D2', label: 'Khadi Cream' },
+  black: { name: 'black', hex: '#1A1714', label: 'Charcoal' },
+  white: { name: 'white', hex: '#F5F1E8', label: 'Off-White' },
+};
+
+export const SIZES = ['S', 'M', 'L', 'XL', 'XXL'] as const;
+export type Size = typeof SIZES[number];
+
+export const PRODUCTS: TeeDesign[] = [
+  {
+    slug: 'parasite-of-the-system',
+    name: 'Parasite of the System',
+    subtitle: 'The Badge',
+    description: 'They called us parasites. We made it merch. Worn as a badge of survival.',
+    price: 499,
+    tagline: 'CERTIFIED. STAMPED. PROUD.',
+    colors: [COLORS.black, COLORS.cream],
+    designType: 'badge',
+    featured: true,
+  },
+  {
+    slug: 'secular-socialist-democratic-lazy',
+    name: 'Secular. Socialist. Democratic. Lazy.',
+    subtitle: 'The Manifesto',
+    description: 'The official four words. Print them on your chest like a constitutional preamble.',
+    price: 499,
+    tagline: 'THE PARTY LINE',
+    colors: [COLORS.cream, COLORS.black],
+    designType: 'manifesto',
+    featured: true,
+  },
+  {
+    slug: 'cjp-official-logo',
+    name: 'CJP Official Logo Tee',
+    subtitle: 'The Symbol',
+    description: 'A cockroach holding a broom. Election symbol energy. Tell them which side you\'re on.',
+    price: 499,
+    tagline: 'VOTE WITH YOUR CHEST',
+    colors: [COLORS.cream, COLORS.black, COLORS.white],
+    designType: 'logo',
+    featured: true,
+  },
+  {
+    slug: 'unemployed-by-profession',
+    name: 'Unemployed by Profession',
+    subtitle: 'The Card',
+    description: 'Designed like a business card. Hand it out at family functions.',
+    price: 499,
+    tagline: 'PROFESSIONAL CREDENTIALS',
+    colors: [COLORS.white, COLORS.black],
+    designType: 'card',
+  },
+  {
+    slug: 'apocalypse-no-job',
+    name: 'Will Survive the Apocalypse, Still Won\'t Get a Job',
+    subtitle: 'The Thesis',
+    description: 'The whole movement on one tee. Nuclear-grade resilience meets the Indian job market.',
+    price: 499,
+    tagline: 'EVOLUTIONARY GUARANTEE',
+    colors: [COLORS.black, COLORS.cream],
+    designType: 'thesis',
+    featured: true,
+  },
+  {
+    slug: 'roach-before-rozgar',
+    name: 'Roach Before Rozgar',
+    subtitle: 'The Hinglish',
+    description: 'Roach before rozgar (employment). The new desi motto.',
+    price: 499,
+    tagline: 'PRIORITIES, SET.',
+    colors: [COLORS.cream, COLORS.black],
+    designType: 'wordplay',
+  },
+  {
+    slug: 'main-bhi-cockroach',
+    name: 'Main Bhi Cockroach',
+    subtitle: 'The Solidarity',
+    description: '"I am also a cockroach." Devanagari + English. Worn in protest.',
+    price: 499,
+    tagline: 'मैं भी कॉकरोच',
+    colors: [COLORS.white, COLORS.black, COLORS.cream],
+    designType: 'solidarity',
+  },
+  {
+    slug: 'vote-for-the-lazy',
+    name: 'Vote for the Lazy',
+    subtitle: 'The Campaign',
+    description: 'Vintage Indian election poster meets Gen Z apathy. A poster on your torso.',
+    price: 499,
+    tagline: 'CAMPAIGN HQ APPROVED',
+    colors: [COLORS.cream, COLORS.black],
+    designType: 'campaign',
+  },
+  {
+    slug: 'annual-report-survived',
+    name: 'Annual Report: Survived',
+    subtitle: 'The Document',
+    description: 'A mock government annual report cover. Only KPI: still here.',
+    price: 499,
+    tagline: 'F.Y. 2025—26',
+    colors: [COLORS.cream, COLORS.white],
+    designType: 'report',
+  },
+];
+
+export const getProduct = (slug: string) => PRODUCTS.find(p => p.slug === slug);
