@@ -4,6 +4,7 @@ import { CartProvider } from '@/components/CartProvider';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import CockroachCursor from '@/components/CockroachCursor';
+import DonateButton from '@/components/DonateButton';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cjpdrip.store'),
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           {children}
           <Footer />
+          <DonateButton />
           <CockroachCursor />
         </CartProvider>
         {/* Razorpay checkout script loaded globally so it's ready on checkout page */}

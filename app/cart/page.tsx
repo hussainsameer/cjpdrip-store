@@ -39,13 +39,19 @@ export default function CartPage() {
             const product = getProduct(item.slug);
             const colorObj = product?.colors.find(c => c.name === item.color);
             return (
-              <div key={`${item.slug}-${item.size}-${item.color}`} className="cart-item">
-                <div className="cart-item-img" style={{ background: colorObj?.hex, color: item.color === 'black' ? '#EFE6D2' : '#1A1714' }}>
-                  {product && <div style={{ transform: 'scale(0.6)' }}><TeeDesign design={product} /></div>}
+              <div key={`${item.slug}-${item.size}-${item.color}-${item.personalization?.name || ''}`} className="cart-item">
+                <div className="cart-item-img" style={{ background: colorObj?.hex, color: ['black', 'olive', 'red'].includes(item.color) ? '#EFE6D2' : '#1A1714' }}>
+                  {product && <div style={{ transform: 'scale(0.6)' }}><TeeDesign design={product} customization={item.personalization} /></div>}
                 </div>
                 <div>
                   <div className="cart-item-name">{item.name}</div>
                   <div className="cart-item-meta">Size {item.size} · {colorObj?.label}</div>
+                  {item.personalization && (item.personalization.name || item.personalization.exp) && (
+                    <div className="cart-item-meta" style={{ marginTop: 4, fontStyle: 'italic' }}>
+                      Personalised: {item.personalization.name || '—'}
+                      {item.personalization.exp ? ` · ${item.personalization.exp} yrs` : ''}
+                    </div>
+                  )}
                   <div className="cart-item-qty">
                     <button onClick={() => updateQty(item.slug, item.size, item.color, item.qty - 1)}>−</button>
                     <div className="cart-item-qty-val">{item.qty}</div>

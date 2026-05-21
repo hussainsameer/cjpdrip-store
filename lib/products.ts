@@ -7,7 +7,9 @@ export type TeeDesign = {
   tagline: string;
   colors: { name: string; hex: string; label: string }[];
   designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief' | 'inflation' | 'wifi' | 'censor' | 'pothole' | 'powercut';
+  category?: 'tee' | 'mug';
   featured?: boolean;
+  personalizable?: boolean;
 };
 
 export const COLORS = {
@@ -63,11 +65,12 @@ export const PRODUCTS: TeeDesign[] = [
     slug: 'unemployed-by-profession',
     name: 'Unemployed by Profession',
     subtitle: 'The Card',
-    description: 'Designed like a business card. Hand it out at family functions.',
-    price: 499,
+    description: 'Designed like a business card. Add your own name and years of nothing. Hand it out at family functions.',
+    price: 549,
     tagline: 'PROFESSIONAL CREDENTIALS',
     colors: STANDARD_COLORS,
     designType: 'card',
+    personalizable: true,
   },
   {
     slug: 'apocalypse-no-job',
@@ -213,6 +216,64 @@ export const PRODUCTS: TeeDesign[] = [
     tagline: 'CANDLE-LIT EXPERT',
     colors: STANDARD_COLORS,
     designType: 'powercut',
+  },
+
+  /* ============ MUGS ============ */
+  {
+    slug: 'mug-cockroach-in-chief',
+    name: 'Cockroach in Chief Mug',
+    subtitle: 'The Daily Brew',
+    description: 'Sip your morning chai while the Cockroach in Chief watches over you. Ceramic, 350ml.',
+    price: 349,
+    tagline: 'SIP. SURVIVE. REPEAT.',
+    colors: [COLORS.white, COLORS.black],
+    designType: 'inchief',
+    category: 'mug',
+    featured: true,
+  },
+  {
+    slug: 'mug-secular-socialist-democratic-lazy',
+    name: 'Manifesto Mug',
+    subtitle: 'The Party Line',
+    description: 'Four words. One mug. Drink the manifesto.',
+    price: 349,
+    tagline: 'SECULAR · SOCIALIST · DEMOCRATIC · LAZY',
+    colors: [COLORS.white, COLORS.black],
+    designType: 'manifesto',
+    category: 'mug',
+  },
+  {
+    slug: 'mug-wifi-greater-than-wages',
+    name: 'WiFi > Wages Mug',
+    subtitle: 'The Equation',
+    description: 'A mug for the unemployed who still pays for fibre. Ceramic, 350ml.',
+    price: 349,
+    tagline: 'PRIORITIES, SOLVED',
+    colors: [COLORS.white, COLORS.black],
+    designType: 'wifi',
+    category: 'mug',
+  },
+  {
+    slug: 'mug-parasite-of-the-system',
+    name: 'Parasite Mug',
+    subtitle: 'The Stamp',
+    description: 'Worn as a badge. Now drunk as a habit. Ceramic, 350ml.',
+    price: 349,
+    tagline: 'CERTIFIED · STAMPED · PROUD',
+    colors: [COLORS.white, COLORS.black],
+    designType: 'badge',
+    category: 'mug',
+  },
+  {
+    slug: 'mug-roach-before-rozgar',
+    name: 'Roach Before Rozgar Mug',
+    subtitle: 'The Hinglish',
+    description: 'For the chai before the interview. Ceramic, 350ml.',
+    price: 349,
+    tagline: 'PRIORITIES, SET',
+    colors: [COLORS.white, COLORS.black],
+    designType: 'wordplay',
+    category: 'mug',
   },
 ];
 

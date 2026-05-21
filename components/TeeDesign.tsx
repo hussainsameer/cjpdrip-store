@@ -7,7 +7,15 @@ import type { TeeDesign as TeeDesignType } from '@/lib/products';
  * Each design is a CSS/SVG composition (not a photo).
  * Designs sit "on" a tee silhouette — but we keep it abstract/poster-like.
  */
-export function TeeDesign({ design, scale = 1 }: { design: TeeDesignType; scale?: number }) {
+export function TeeDesign({
+  design,
+  scale = 1,
+  customization,
+}: {
+  design: TeeDesignType;
+  scale?: number;
+  customization?: { name?: string; exp?: string };
+}) {
   const Comp = DESIGNS[design.designType] ?? DESIGNS.badge;
   return (
     <div className="design-canvas" style={{
@@ -19,7 +27,7 @@ export function TeeDesign({ design, scale = 1 }: { design: TeeDesignType; scale?
       placeItems: 'center',
       padding: `${20 * scale}px`,
     }}>
-      <Comp />
+      <Comp customization={customization} />
     </div>
   );
 }
@@ -74,20 +82,24 @@ const DESIGNS = {
   ),
 
   // 4. Unemployed by Profession — business card
-  card: () => (
-    <div style={{ width: '95%', border: '2px solid currentColor', padding: '18px 20px', textAlign: 'left' }}>
-      <div style={{ ...D.mono, fontSize: 8, opacity: 0.6, marginBottom: 10 }}>— PROFESSIONAL CARD —</div>
-      <div style={{ ...D.display, fontSize: 'clamp(18px, 3.8vw, 30px)', marginBottom: 4 }}>YOUR NAME HERE</div>
-      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontStyle: 'italic', marginBottom: 14 }}>Unemployed by Profession</div>
-      <div style={{ height: 1, background: 'currentColor', opacity: 0.4, marginBottom: 14 }} />
-      <div style={{ ...D.mono, fontSize: 9, lineHeight: 1.8 }}>
-        <div>EXP — 0 YRS</div>
-        <div>CTC — ₹0.00 LPA</div>
-        <div>STATUS — STILL HERE</div>
+  card: ({ customization }: any = {}) => {
+    const displayName = (customization?.name?.trim() || 'YOUR NAME HERE').toUpperCase();
+    const exp = customization?.exp?.trim() || '0';
+    return (
+      <div style={{ width: '95%', border: '2px solid currentColor', padding: '18px 20px', textAlign: 'left' }}>
+        <div style={{ ...D.mono, fontSize: 8, opacity: 0.6, marginBottom: 10 }}>— PROFESSIONAL CARD —</div>
+        <div style={{ ...D.display, fontSize: 'clamp(18px, 3.8vw, 30px)', marginBottom: 4 }}>{displayName}</div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontStyle: 'italic', marginBottom: 14 }}>Unemployed by Profession</div>
+        <div style={{ height: 1, background: 'currentColor', opacity: 0.4, marginBottom: 14 }} />
+        <div style={{ ...D.mono, fontSize: 9, lineHeight: 1.8 }}>
+          <div>EXP — {exp} YRS</div>
+          <div>CTC — ₹0.00 LPA</div>
+          <div>STATUS — STILL HERE</div>
+        </div>
+        <div style={{ ...D.mono, fontSize: 8, marginTop: 12, opacity: 0.6, textAlign: 'right' }}>CJP·2026</div>
       </div>
-      <div style={{ ...D.mono, fontSize: 8, marginTop: 12, opacity: 0.6, textAlign: 'right' }}>CJP·2026</div>
-    </div>
-  ),
+    );
+  },
 
   // 5. Apocalypse, no job — the thesis
   thesis: () => (

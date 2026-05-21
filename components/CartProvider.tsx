@@ -10,6 +10,7 @@ export type CartItem = {
   size: Size;
   color: string;
   qty: number;
+  personalization?: { name?: string; exp?: string };
 };
 
 type CartCtx = {
@@ -26,7 +27,8 @@ type CartCtx = {
 const Ctx = createContext<CartCtx | null>(null);
 
 const KEY = 'cjp-cart-v1';
-const itemKey = (i: { slug: string; size: Size; color: string }) => `${i.slug}__${i.size}__${i.color}`;
+const itemKey = (i: { slug: string; size: Size; color: string; personalization?: { name?: string; exp?: string } }) =>
+  `${i.slug}__${i.size}__${i.color}__${i.personalization?.name || ''}__${i.personalization?.exp || ''}`;
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
