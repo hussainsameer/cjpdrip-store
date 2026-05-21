@@ -23,14 +23,32 @@ export async function POST(req: NextRequest) {
     const rzp = new Razorpay({ key_id: keyId, key_secret: keySecret });
 
     // Razorpay expects amount in paise (smallest unit)
+    const itemsSummary =
+      Array.isArray(items) && items.length > 0
+        ? items
+            .map(
+              (i: any) =>
+                `${i.name} (${i.size || '-'}/${i.color || '-'}) × ${i.qty || 1}`,
+            )
+            .join(' | ')
+            .slice(0, 480)
+        : '';
+
     const order = await rzp.orders.create({
       amount: Math.round(amount * 100),
       currency: 'INR',
       receipt: `cjp_${Date.now()}`,
       notes: {
+        source: 'cjpdrip-store',
         customer_name: customer?.name || '',
+        customer_email: customer?.email || '',
         customer_phone: customer?.phone || '',
+        address: customer?.address || '',
+        city: customer?.city || '',
+        state: customer?.state || '',
+        pincode: customer?.pincode || '',
         item_count: String(items?.length || 0),
+        items_summary: itemsSummary,
       },
     });
 

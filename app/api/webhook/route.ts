@@ -33,25 +33,39 @@ export async function POST(req: NextRequest) {
 
     console.log('[WEBHOOK]', eventType, JSON.stringify(event.payload || {}).slice(0, 600));
 
-    // For captured payments, also forward to the Google Sheet so the user has
-    // an at-a-glance record of every paid order.
+    // For captured payments originating from our checkout, forward to the
+    // Google Sheet with full customer + order details.
     const sheetUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
     if (sheetUrl && eventType === 'payment.captured') {
       try {
         const p = event.payload?.payment?.entity || {};
-        const amountInr = p.amount ? p.amount / 100 : 0;
         const notes = p.notes || {};
-        await fetch(sheetUrl, {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({
-            name: notes.customer_name || p.contact || '',
-            email: p.email || '',
-            city: '',
-            reason: `Order ${p.order_id} · ₹${amountInr} · ${p.method || 'paid'} · ${notes.item_count || '?'} items`,
-            source: 'order-paid',
-          }),
-        });
+
+        // Skip donate-button / razorpay.me payments — only log real store orders
+        if (notes.source !== 'cjpdrip-store') {
+          console.log('[WEBHOOK] skipping non-store payment:', p.id);
+        } else {
+          const amountInr = p.amount ? p.amount / 100 : 0;
+          await fetch(sheetUrl, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              name: notes.customer_name || '',
+              email: notes.customer_email || p.email || '',
+              city: notes.city || '',
+              reason: `₹${amountInr} · ${notes.items_summary || `${notes.item_count || '?'} items`}`,
+              source: 'order-paid',
+              phone: notes.customer_phone || p.contact || '',
+              address: notes.address || '',
+              state: notes.state || '',
+              pincode: notes.pincode || '',
+              amount: amountInr,
+              order_id: p.order_id || '',
+              payment_id: p.id || '',
+              method: p.method || '',
+            }),
+          });
+        }
       } catch (e) {
         console.error('[WEBHOOK] sheet forward failed:', e);
       }
