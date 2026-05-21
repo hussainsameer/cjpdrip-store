@@ -238,7 +238,7 @@ img { display: block; max-width: 100%; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M52 38 L78 28 Q100 48 122 28 L148 38 L178 56 L168 86 L146 80 L146 178 L54 178 L54 80 L32 86 L22 56 Z' fill='none' stroke='%231A1714' stroke-width='1.8' stroke-linejoin='round' opacity='0.5'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><defs><linearGradient id='b' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23F5F1E8'/><stop offset='0.7' stop-color='%23EFE6D2'/><stop offset='1' stop-color='%23D6CBB0'/></linearGradient><linearGradient id='s' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='%23000' stop-opacity='0.18'/><stop offset='0.5' stop-color='%23000' stop-opacity='0'/><stop offset='1' stop-color='%23000' stop-opacity='0.18'/></linearGradient></defs><ellipse cx='120' cy='220' rx='80' ry='6' fill='%23000' opacity='0.18'/><path d='M60 42 L86 30 Q120 52 154 30 L180 42 L214 64 L202 100 L172 92 L172 210 L68 210 L68 92 L38 100 L26 64 Z' fill='url(%23b)' stroke='%231A1714' stroke-width='1.8' stroke-linejoin='round'/><path d='M60 42 L86 30 Q120 52 154 30 L180 42 L214 64 L202 100 L172 92 L172 210 L68 210 L68 92 L38 100 L26 64 Z' fill='url(%23s)'/><path d='M86 30 Q120 60 154 30' fill='none' stroke='%231A1714' stroke-width='2.2' stroke-linejoin='round'/><path d='M88 34 Q120 56 152 34' fill='none' stroke='%231A1714' stroke-width='0.8' opacity='0.45'/><path d='M60 44 L70 90' fill='none' stroke='%231A1714' stroke-width='0.6' opacity='0.4'/><path d='M180 44 L170 90' fill='none' stroke='%231A1714' stroke-width='0.6' opacity='0.4'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 96% 96%;
@@ -246,9 +246,7 @@ img { display: block; max-width: 100%; }
   transition: opacity 0.25s;
   z-index: 0;
 }
-.product-card:hover .product-tee-bg::before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M52 38 L78 28 Q100 48 122 28 L148 38 L178 56 L168 86 L146 80 L146 178 L54 178 L54 80 L32 86 L22 56 Z' fill='none' stroke='%231A1714' stroke-width='2.2' stroke-linejoin='round' opacity='0.7'/></svg>");
-}
+.product-card:hover .product-tee-bg::before { filter: brightness(1.05) contrast(1.04); }
 .product-tee-bg .design-canvas {
   position: relative;
   z-index: 1;
@@ -313,7 +311,7 @@ img { display: block; max-width: 100%; }
   content: '';
   position: absolute;
   inset: 4%;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M52 38 L78 28 Q100 48 122 28 L148 38 L178 56 L168 86 L146 80 L146 178 L54 178 L54 80 L32 86 L22 56 Z' fill='none' stroke='currentColor' stroke-width='2' stroke-linejoin='round' opacity='0.55'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><defs><linearGradient id='b' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23FFFFFF' stop-opacity='0.45'/><stop offset='0.7' stop-color='%23FFFFFF' stop-opacity='0'/><stop offset='1' stop-color='%23000' stop-opacity='0.18'/></linearGradient><linearGradient id='s' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='%23000' stop-opacity='0.22'/><stop offset='0.5' stop-color='%23000' stop-opacity='0'/><stop offset='1' stop-color='%23000' stop-opacity='0.22'/></linearGradient></defs><ellipse cx='120' cy='222' rx='80' ry='5' fill='%23000' opacity='0.2'/><path d='M60 42 L86 30 Q120 52 154 30 L180 42 L214 64 L202 100 L172 92 L172 210 L68 210 L68 92 L38 100 L26 64 Z' fill='currentColor' fill-opacity='0.0' stroke='currentColor' stroke-width='2' stroke-linejoin='round'/><path d='M60 42 L86 30 Q120 52 154 30 L180 42 L214 64 L202 100 L172 92 L172 210 L68 210 L68 92 L38 100 L26 64 Z' fill='url(%23b)'/><path d='M60 42 L86 30 Q120 52 154 30 L180 42 L214 64 L202 100 L172 92 L172 210 L68 210 L68 92 L38 100 L26 64 Z' fill='url(%23s)'/><path d='M86 30 Q120 60 154 30' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linejoin='round'/><path d='M88 34 Q120 56 152 34' fill='none' stroke='currentColor' stroke-width='0.8' opacity='0.45'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 90% 90%;

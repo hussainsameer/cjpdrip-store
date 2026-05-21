@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import { useCart } from './CartProvider';
+import CJPLogo from './CJPLogo';
 
 export default function Nav() {
   const { count, ready } = useCart();
   return (
     <nav className="nav">
       <Link href="/" className="nav-brand" aria-label="CJP Drip home">
-        <img src="/logo.png" alt="Cockroach Janta Party" className="nav-logo" />
+        <CJPLogo height={48} />
       </Link>
       <div className="nav-links">
         <Link href="/" className="nav-link">Shop</Link>
