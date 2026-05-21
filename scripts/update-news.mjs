@@ -151,7 +151,9 @@ async function main() {
     usedIds.add(candidate);
     const date = isoDate(item.pubDate);
     const source = item.source || 'Google News';
-    const blurb = (item.description || '').slice(0, 240) || 'Read the full story on the source.';
+    // Google News RSS descriptions are just HTML-wrapped title repeats — use a
+    // generic blurb instead so the news page stays clean.
+    const blurb = `Read the full story on ${source}.`;
 
     return `  {
     id: ${tsLiteral(candidate)},
