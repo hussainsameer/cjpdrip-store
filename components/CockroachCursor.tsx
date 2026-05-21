@@ -12,8 +12,8 @@ export default function CockroachCursor() {
   const angleRef = useRef(0);
 
   useEffect(() => {
-    // Skip on touch devices
-    if (typeof window === 'undefined' || matchMedia('(pointer: coarse)').matches) return;
+    if (typeof window === 'undefined') return;
+    const isTouch = matchMedia('(pointer: coarse)').matches;
 
     const onMove = (e: MouseEvent) => {
       setVisible(true);
@@ -23,12 +23,29 @@ export default function CockroachCursor() {
       drift.current = { vx: 0, vy: 0, targetAngle: angleRef.current };
     };
 
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0] || e.changedTouches[0];
+      if (!t) return;
+      setVisible(true);
+      posRef.current = { x: t.clientX, y: t.clientY };
+      setPos({ x: t.clientX, y: t.clientY });
+      lastMouseTime.current = Date.now();
+      drift.current = { vx: 0, vy: 0, targetAngle: angleRef.current };
+    };
+
     const onLeave = () => setVisible(false);
     const onEnter = () => setVisible(true);
 
-    window.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseleave', onLeave);
-    document.addEventListener('mouseenter', onEnter);
+    if (isTouch) {
+      // On mobile: start invisible until first touch, then keep on screen forever
+      window.addEventListener('touchstart', onTouch, { passive: true });
+      window.addEventListener('touchmove', onTouch, { passive: true });
+      window.addEventListener('touchend', onTouch, { passive: true });
+    } else {
+      window.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseleave', onLeave);
+      document.addEventListener('mouseenter', onEnter);
+    }
 
     let last = performance.now();
     let raf = 0;
@@ -83,9 +100,15 @@ export default function CockroachCursor() {
     raf = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseleave', onLeave);
-      document.removeEventListener('mouseenter', onEnter);
+      if (isTouch) {
+        window.removeEventListener('touchstart', onTouch);
+        window.removeEventListener('touchmove', onTouch);
+        window.removeEventListener('touchend', onTouch);
+      } else {
+        window.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseleave', onLeave);
+        document.removeEventListener('mouseenter', onEnter);
+      }
       cancelAnimationFrame(raf);
     };
   }, []);

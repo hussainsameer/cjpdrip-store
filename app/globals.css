@@ -212,9 +212,8 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .product-card:hover { background: var(--cream-dark); }
-.product-card:hover .product-tee-bg { background: var(--ink); }
-.product-card:hover .product-tee-bg .design-canvas { color: var(--cream); }
-.product-card:hover .product-tee-bg .design-canvas .invert { color: var(--ink); background: var(--cream); }
+.product-card:hover .product-tee-bg { background: var(--paper); }
+.product-card:hover .product-tee-bg .design-canvas { transform: scale(0.55) translateY(8%); }
 
 .product-tee-bg {
   aspect-ratio: 1;
@@ -239,7 +238,7 @@ img { display: block; max-width: 100%; }
   z-index: 0;
 }
 .product-card:hover .product-tee-bg::before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M52 38 L78 28 Q100 48 122 28 L148 38 L178 56 L168 86 L146 80 L146 178 L54 178 L54 80 L32 86 L22 56 Z' fill='none' stroke='%23EFE6D2' stroke-width='1.8' stroke-linejoin='round' opacity='0.6'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M52 38 L78 28 Q100 48 122 28 L148 38 L178 56 L168 86 L146 80 L146 178 L54 178 L54 80 L32 86 L22 56 Z' fill='none' stroke='%231A1714' stroke-width='2.2' stroke-linejoin='round' opacity='0.7'/></svg>");
 }
 .product-tee-bg .design-canvas {
   position: relative;

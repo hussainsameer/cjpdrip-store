@@ -26,9 +26,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     setTimeout(() => router.push('/cart'), 350);
   };
 
-  // Set tee background based on selected color
+  // Set tee background based on selected color; light text on dark tees
   const teeBg = color.hex;
-  const teeFg = color.name === 'black' ? '#EFE6D2' : '#1A1714';
+  const teeFg = ['black', 'olive', 'red'].includes(color.name) ? '#EFE6D2' : '#1A1714';
 
   return (
     <main className="pdp">

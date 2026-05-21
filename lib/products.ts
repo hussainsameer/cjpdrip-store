@@ -11,10 +11,16 @@ export type TeeDesign = {
 };
 
 export const COLORS = {
-  cream: { name: 'cream', hex: '#EFE6D2', label: 'Khadi Cream' },
+  red: { name: 'red', hex: '#C8331C', label: 'Election Red' },
   black: { name: 'black', hex: '#1A1714', label: 'Charcoal' },
   white: { name: 'white', hex: '#F5F1E8', label: 'Off-White' },
+  beige: { name: 'beige', hex: '#D9C9A5', label: 'Khadi Beige' },
+  olive: { name: 'olive', hex: '#5C6B3F', label: 'Olive Drab' },
+  cream: { name: 'cream', hex: '#EFE6D2', label: 'Khadi Cream' },
 };
+
+// Standard 5-color palette every tee carries
+const STANDARD_COLORS = [COLORS.red, COLORS.black, COLORS.white, COLORS.beige, COLORS.olive];
 
 export const SIZES = ['S', 'M', 'L', 'XL', 'XXL'] as const;
 export type Size = typeof SIZES[number];
@@ -27,7 +33,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'They called us parasites. We made it merch. Worn as a badge of survival.',
     price: 499,
     tagline: 'CERTIFIED. STAMPED. PROUD.',
-    colors: [COLORS.black, COLORS.cream],
+    colors: STANDARD_COLORS,
     designType: 'badge',
     featured: true,
   },
@@ -38,7 +44,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'The official four words. Print them on your chest like a constitutional preamble.',
     price: 499,
     tagline: 'THE PARTY LINE',
-    colors: [COLORS.cream, COLORS.black],
+    colors: STANDARD_COLORS,
     designType: 'manifesto',
     featured: true,
   },
@@ -49,7 +55,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'A cockroach holding a broom. Election symbol energy. Tell them which side you\'re on.',
     price: 499,
     tagline: 'VOTE WITH YOUR CHEST',
-    colors: [COLORS.cream, COLORS.black, COLORS.white],
+    colors: STANDARD_COLORS,
     designType: 'logo',
     featured: true,
   },
@@ -60,7 +66,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'Designed like a business card. Hand it out at family functions.',
     price: 499,
     tagline: 'PROFESSIONAL CREDENTIALS',
-    colors: [COLORS.white, COLORS.black],
+    colors: STANDARD_COLORS,
     designType: 'card',
   },
   {
@@ -70,7 +76,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'The whole movement on one tee. Nuclear-grade resilience meets the Indian job market.',
     price: 499,
     tagline: 'EVOLUTIONARY GUARANTEE',
-    colors: [COLORS.black, COLORS.cream],
+    colors: STANDARD_COLORS,
     designType: 'thesis',
     featured: true,
   },
@@ -81,7 +87,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'Roach before rozgar (employment). The new desi motto.',
     price: 499,
     tagline: 'PRIORITIES, SET.',
-    colors: [COLORS.cream, COLORS.black],
+    colors: STANDARD_COLORS,
     designType: 'wordplay',
   },
   {
@@ -91,7 +97,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: '"I am also a cockroach." Devanagari + English. Worn in protest.',
     price: 499,
     tagline: 'मैं भी कॉकरोच',
-    colors: [COLORS.white, COLORS.black, COLORS.cream],
+    colors: STANDARD_COLORS,
     designType: 'solidarity',
   },
   {
@@ -101,7 +107,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'Vintage Indian election poster meets Gen Z apathy. A poster on your torso.',
     price: 499,
     tagline: 'CAMPAIGN HQ APPROVED',
-    colors: [COLORS.cream, COLORS.black],
+    colors: STANDARD_COLORS,
     designType: 'campaign',
   },
   {
@@ -111,7 +117,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'A mock government annual report cover. Only KPI: still here.',
     price: 499,
     tagline: 'F.Y. 2025—26',
-    colors: [COLORS.cream, COLORS.white],
+    colors: STANDARD_COLORS,
     designType: 'report',
   },
   {
@@ -121,7 +127,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'A cockroach in shades, speaking at a podium. Presidential. Unstoppable.',
     price: 549,
     tagline: 'MY FELLOW COCKROACHES',
-    colors: [COLORS.black, COLORS.cream],
+    colors: STANDARD_COLORS,
     designType: 'podium',
     featured: true,
   },
@@ -132,7 +138,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'A cockroach with attitude. Sunglasses on. Apocalypse pending.',
     price: 499,
     tagline: 'NEVER NOT CHILL',
-    colors: [COLORS.cream, COLORS.black],
+    colors: STANDARD_COLORS,
     designType: 'shades',
   },
   {
@@ -142,7 +148,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'Saffron, white, green — and one cockroach. The national colours, reclaimed.',
     price: 549,
     tagline: 'SECULAR · SOCIALIST · LAZY',
-    colors: [COLORS.cream, COLORS.white],
+    colors: STANDARD_COLORS,
     designType: 'tricolor',
     featured: true,
   },
@@ -153,7 +159,7 @@ export const PRODUCTS: TeeDesign[] = [
     description: 'A solemn presidential-style portrait. Hang it in the office. Or wear it.',
     price: 599,
     tagline: 'EST. 16·MAY·2026',
-    colors: [COLORS.black, COLORS.cream],
+    colors: STANDARD_COLORS,
     designType: 'inchief',
   },
 ];
