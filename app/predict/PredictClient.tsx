@@ -80,6 +80,28 @@ export default function PredictClient() {
         <div><span>Leading bet</span><strong>{leader.label}</strong></div>
       </div>
 
+      {/* Follow CTA — sits between the meta and the bet grid */}
+      <a
+        href="https://www.instagram.com/cockroachjantaparty/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="predict-follow"
+      >
+        <div className="predict-follow-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </div>
+        <div className="predict-follow-text">
+          <div className="predict-follow-eyebrow">Tilt the swarm in your favour →</div>
+          <div className="predict-follow-title">Follow @cockroachjantaparty</div>
+          <div className="predict-follow-sub">Every follow nudges the Sunday number. Bet smart, follow smarter.</div>
+        </div>
+        <div className="predict-follow-arrow">↗</div>
+      </a>
+
       <div className="predict-grid">
         {CHOICES.map((c) => {
           const votes = counts[c.id];
