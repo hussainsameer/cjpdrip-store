@@ -29,7 +29,7 @@ const STYLE = `Create a high-contrast, screen-printed graphic t-shirt artwork. S
 const DESIGNS = [
   {
     slug: 'black-protest-tee',
-    prompt: `A single bold pure-black cockroach silhouette, centered on the cream canvas. NO red stripes on the body, NO Spider-Man references. Pure black ink silhouette only. Antennae arched upward. Minimal, iconic, like a heritage brand logomark (think Adidas trefoil simplicity). Below the cockroach in small monospace: "CJP · EST 2026". Wordless above. Strong negative space.`,
+    prompt: `A minimalist Japanese sumi-e brush silhouette of a cockroach, centered on cream canvas. The entire cockroach is rendered as one solid black ink shape — body, head, antennae, all six legs in pure black ink only. Style: hand-stamped block print, like a heritage Japanese seal. Use TWO COLORS ONLY across the entire artwork: pure black ink and cream background. Antennae curve gracefully upward. Below the silhouette in small monospace serif: "CJP · EST 2026". Generous negative space. Iconic, restrained, gallery-print quality.`,
   },
   {
     slug: 'parasite-of-the-system',
@@ -41,7 +41,7 @@ const DESIGNS = [
   },
   {
     slug: 'cjp-official-logo',
-    prompt: `A cockroach standing upright, holding a SMARTPHONE in one of its front legs (held up like reading/scrolling). STRICTLY NO BROOMS, NO JHADU, NO STICKS. Just a cockroach with a cellphone. The phone has a faint screen glow. Inside a bold black circle frame. Below the circle: "COCKROACH JANTA PARTY" in heavy display type. Bottom tagline: "★ VOICE OF THE DOOMSCROLL ★" in red monospace. The smartphone is the only object — no other props.`,
+    prompt: `A cockroach standing upright on hind legs, both front legs holding up a glowing rectangular smartphone screen in front of its face — like a person doomscrolling Instagram on a phone. The smartphone is the central object: a clear modern rectangular phone with a glowing white screen showing a tiny social media feed icon. Cockroach silhouetted around the phone. Surrounding everything: a bold black circular vinyl-record-label border. Below circle: "COCKROACH JANTA PARTY" in heavy condensed display sans-serif. Bottom tagline in red monospace: "★ VOICE OF THE DOOMSCROLL ★". Composition: cockroach, smartphone with glowing screen, circle frame, two text lines — that is everything in the image. Two-tone red and black on cream.`,
   },
   {
     slug: 'unemployed-by-profession',
