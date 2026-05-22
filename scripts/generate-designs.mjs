@@ -37,7 +37,7 @@ const DESIGNS = [
   },
   {
     slug: 'secular-socialist-democratic-lazy',
-    prompt: `Four words stacked vertically in massive display type: "SECULAR." "SOCIALIST." "DEMOCRATIC." "LAZY." — the last word in red. Above: "— THE PARTY LINE —" in monospace. Constitutional preamble energy.`,
+    prompt: `A typography-only poster. Four words stacked vertically in massive heavy condensed display type, each on its own line: "SECULAR." "SOCIALIST." "DEMOCRATIC." "LAZY." The first three words in solid ink black. The last word "LAZY." in deep red. Above the stack, tiny monospace text: "— THE PARTY LINE —". The entire composition is purely typographic — only text, nothing else. Plain cream background. No decorative icons, no symbols, no shapes, no flags, no stripes, no chakras, no embellishments anywhere. Just bold beautiful letterpress typography on cream paper, like a constitutional preamble printed in 1950.`,
   },
   {
     slug: 'cjp-official-logo',
@@ -93,7 +93,7 @@ const DESIGNS = [
   },
   {
     slug: 'unmute-the-mic',
-    prompt: `"[ ARTICLE 19(1)(a) ]" monospace at top. Centered massive display: "FREE / SPEECH" with a thick red strike-through diagonal line through it. Below in a thick black bordered box: "*T&C APPLY" monospace. Tiny italic: "(unmute the mic.)"`,
+    prompt: `A typography-only protest poster. At top in monospace: "[ ARTICLE 19(1)(a) ]". Below, two massive heavy condensed display sans-serif words stacked: "FREE" then "SPEECH" — both words rendered in solid pure ink black, with the letters completely filled in flat black, NO patterns or images inside the letterforms. A thick diagonal red strike-through line cuts across both words at a 30-degree angle. Below, inside a thick black-bordered rectangular box: "*T&C APPLY" in monospace. Tiny italic line at the bottom: "(unmute the mic.)" Cream background. Pure typographic poster — only solid black text and one red diagonal line. No flags, no chakras, no decorative elements inside or around the letters, no national symbols anywhere.`,
   },
   {
     slug: 'pothole-insurance',

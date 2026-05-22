@@ -73,17 +73,6 @@ export const PRODUCTS: TeeDesign[] = [
     featured: true,
   },
   {
-    slug: 'unemployed-by-profession',
-    name: 'Unemployed by Profession',
-    subtitle: 'The Card',
-    description: 'Designed like a business card. Add your own name and years of nothing. Hand it out at family functions.',
-    price: 549,
-    tagline: 'PROFESSIONAL CREDENTIALS',
-    colors: STANDARD_COLORS,
-    designType: 'card',
-    personalizable: true,
-  },
-  {
     slug: 'apocalypse-no-job',
     name: 'Will Survive the Apocalypse, Still Won\'t Get a Job',
     subtitle: 'The Thesis',
