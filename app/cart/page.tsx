@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/components/CartProvider';
 import { getProduct } from '@/lib/products';
-import { TeeDesign } from '@/components/TeeDesign';
+import DesignVisual from '@/components/DesignVisual';
 
 export default function CartPage() {
   const { items, updateQty, remove, total, ready } = useCart();
@@ -41,7 +41,7 @@ export default function CartPage() {
             return (
               <div key={`${item.slug}-${item.size}-${item.color}-${item.personalization?.name || ''}`} className="cart-item">
                 <div className="cart-item-img" style={{ background: colorObj?.hex, color: ['black', 'olive', 'red'].includes(item.color) ? '#EFE6D2' : '#1A1714' }}>
-                  {product && <div style={{ transform: 'scale(0.6)' }}><TeeDesign design={product} customization={item.personalization} /></div>}
+                  {product && <div style={{ transform: 'scale(0.6)' }}><DesignVisual design={product} customization={item.personalization} /></div>}
                 </div>
                 <div>
                   <div className="cart-item-name">{item.name}</div>

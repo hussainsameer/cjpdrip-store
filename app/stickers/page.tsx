@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { PRODUCTS } from '@/lib/products';
-import { TeeDesign } from '@/components/TeeDesign';
+import DesignVisual from '@/components/DesignVisual';
 
 export const metadata: Metadata = {
   title: 'Stickers · CJP Drip',
@@ -58,7 +58,7 @@ export default function StickersPage() {
           <Link key={p.slug} href={`/products/${p.slug}`} className="product-card">
             {p.featured && <div className="featured-badge">Featured</div>}
             <div className="product-tee-bg is-sticker">
-              <TeeDesign design={p} />
+              <DesignVisual design={p} />
             </div>
             <div className="product-info">
               <div className="product-number">№ {String(i + 1).padStart(2, '0')} · {p.subtitle}</div>

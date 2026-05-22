@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { PRODUCTS } from '@/lib/products';
-import { TeeDesign } from '@/components/TeeDesign';
+import DesignVisual from '@/components/DesignVisual';
 
 const orgLd = {
   '@context': 'https://schema.org',
@@ -143,7 +143,7 @@ export default function HomePage() {
           <Link key={p.slug} href={`/products/${p.slug}`} className="product-card">
             {p.featured && <div className="featured-badge">Featured</div>}
             <div className={`product-tee-bg ${p.category === 'mug' ? 'is-mug' : ''}`}>
-              <TeeDesign design={p} />
+              <DesignVisual design={p} />
             </div>
             <div className="product-info">
               <div className="product-number">№ {String(i + 1).padStart(2, '0')} · {p.subtitle}</div>

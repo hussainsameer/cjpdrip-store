@@ -1365,3 +1365,17 @@ img { display: block; max-width: 100%; }
 .news-foot-cta:hover { background: transparent; color: var(--red); }
 @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
+
+/* ===== AI-GENERATED DESIGN IMAGES ===== */
+.design-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  user-select: none;
+}
+/* When a real PNG renders, hide the placeholder t-shirt silhouette underneath */
+.product-tee-bg:has(.design-image)::before { opacity: 0.15; }
+.pdp-image-wrap:has(.design-image)::before { opacity: 0.15; }

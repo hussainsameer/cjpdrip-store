@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { SIZES, type Size, type TeeDesign as TeeDesignType } from '@/lib/products';
-import { TeeDesign } from '@/components/TeeDesign';
+import DesignVisual from '@/components/DesignVisual';
 import { useCart } from '@/components/CartProvider';
 
 export default function ProductView({ product }: { product: TeeDesignType }) {
@@ -46,7 +46,7 @@ export default function ProductView({ product }: { product: TeeDesignType }) {
       <div>
         <Link href="/" className="pdp-back">Back to shop</Link>
         <div className={`pdp-image-wrap ${isMug ? 'is-mug' : ''} ${isSticker ? 'is-sticker' : ''}`} style={{ background: teeBg, color: teeFg }}>
-          <TeeDesign
+          <DesignVisual
             design={product}
             customization={product.personalizable ? { name: pName, exp: pExp } : undefined}
           />
