@@ -29,7 +29,7 @@ const STYLE = `Create a high-contrast, screen-printed graphic t-shirt artwork. S
 const DESIGNS = [
   {
     slug: 'black-protest-tee',
-    prompt: `A bold cockroach centered on the canvas, Spider-Man-style. Dark brown body, thick red horizontal stripe across upper body, red eyes, antennae arched upward. Minimal, iconic, wordless. Heavy ink texture.`,
+    prompt: `A single bold pure-black cockroach silhouette, centered on the cream canvas. NO red stripes on the body, NO Spider-Man references. Pure black ink silhouette only. Antennae arched upward. Minimal, iconic, like a heritage brand logomark (think Adidas trefoil simplicity). Below the cockroach in small monospace: "CJP · EST 2026". Wordless above. Strong negative space.`,
   },
   {
     slug: 'parasite-of-the-system',
@@ -41,7 +41,7 @@ const DESIGNS = [
   },
   {
     slug: 'cjp-official-logo',
-    prompt: `A cockroach holding an Indian broom (jhadu) as an election symbol, inside a bold circle. Beneath: "COCKROACH JANTA PARTY" in heavy display type, "★ VOTE WITH YOUR CHEST ★" in red monospace below.`,
+    prompt: `A cockroach standing upright, holding a SMARTPHONE in one of its front legs (held up like reading/scrolling). STRICTLY NO BROOMS, NO JHADU, NO STICKS. Just a cockroach with a cellphone. The phone has a faint screen glow. Inside a bold black circle frame. Below the circle: "COCKROACH JANTA PARTY" in heavy display type. Bottom tagline: "★ VOICE OF THE DOOMSCROLL ★" in red monospace. The smartphone is the only object — no other props.`,
   },
   {
     slug: 'unemployed-by-profession',
