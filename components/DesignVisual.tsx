@@ -5,9 +5,10 @@ import type { TeeDesign as TeeDesignType } from '@/lib/products';
 import { TeeDesign } from './TeeDesign';
 
 /**
- * Tries to render a real PNG design from /public/designs/{slug}.png.
- * If the image fails to load (file not generated yet), falls back to the
- * inline SVG version from TeeDesign.
+ * Render priority:
+ *   1. /mockups/{slug}.png   — product mockup (tee laid flat, mug, poster, sticker)
+ *   2. /designs/{slug}.png   — flat artwork fallback
+ *   3. inline SVG            — final fallback
  */
 export default function DesignVisual({
   design,
@@ -16,18 +17,24 @@ export default function DesignVisual({
   design: TeeDesignType;
   customization?: { name?: string; exp?: string };
 }) {
-  const [failed, setFailed] = useState(false);
+  // 0 = mockup, 1 = design, 2 = SVG
+  const [stage, setStage] = useState<0 | 1 | 2>(0);
 
-  if (failed) {
+  if (stage === 2) {
     return <TeeDesign design={design} customization={customization} />;
   }
 
+  const src =
+    stage === 0
+      ? `/mockups/${design.slug}.png`
+      : `/designs/${design.slug}.png`;
+
   return (
     <img
-      src={`/designs/${design.slug}.png`}
+      src={src}
       alt={design.name}
       className="design-image"
-      onError={() => setFailed(true)}
+      onError={() => setStage((s) => (s === 0 ? 1 : 2))}
       loading="lazy"
       draggable={false}
     />

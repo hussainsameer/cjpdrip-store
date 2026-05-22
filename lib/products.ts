@@ -7,7 +7,7 @@ export type TeeDesign = {
   tagline: string;
   colors: { name: string; hex: string; label: string }[];
   designType: 'badge' | 'manifesto' | 'logo' | 'card' | 'thesis' | 'wordplay' | 'solidarity' | 'campaign' | 'report' | 'podium' | 'shades' | 'tricolor' | 'inchief' | 'inflation' | 'wifi' | 'censor' | 'pothole' | 'powercut' | 'protest' | 'stickerlogo' | 'stickerpack' | 'stickerbadge';
-  category?: 'tee' | 'mug' | 'sticker';
+  category?: 'tee' | 'mug' | 'sticker' | 'poster';
   featured?: boolean;
   personalizable?: boolean;
 };
@@ -288,6 +288,42 @@ export const PRODUCTS: TeeDesign[] = [
     colors: [COLORS.white],
     designType: 'wordplay',
     category: 'sticker',
+  },
+
+  /* ============ POSTERS ============ */
+  {
+    slug: 'poster-cockroach-in-chief',
+    name: 'Cockroach in Chief Poster',
+    subtitle: 'The Portrait',
+    description: 'A high-quality screen-print poster of the official portrait. A3 size. Riso-printed on heavy cream paper.',
+    price: 299,
+    tagline: 'A3 · RISO PRINT · 200 GSM',
+    colors: [COLORS.cream],
+    designType: 'inchief',
+    category: 'poster',
+    featured: true,
+  },
+  {
+    slug: 'poster-address-to-the-nation',
+    name: 'Address to the Nation Poster',
+    subtitle: 'The Address',
+    description: 'The Prime-Time Address as a screen-printed poster. A3, heavy cream paper, ready for any wall in the swarm.',
+    price: 299,
+    tagline: 'A3 · RISO PRINT · 200 GSM',
+    colors: [COLORS.cream],
+    designType: 'podium',
+    category: 'poster',
+  },
+  {
+    slug: 'poster-vote-for-the-lazy',
+    name: 'Vote for the Lazy Poster',
+    subtitle: 'The Campaign',
+    description: 'Vintage election campaign poster style. A3 print on cream paper. Tape it to a wall, declare your party.',
+    price: 299,
+    tagline: 'A3 · RISO PRINT · 200 GSM',
+    colors: [COLORS.cream],
+    designType: 'campaign',
+    category: 'poster',
   },
 ];
 

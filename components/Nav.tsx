@@ -13,6 +13,7 @@ export default function Nav() {
       </Link>
       <div className="nav-links">
         <Link href="/" className="nav-link">Shop</Link>
+        <Link href="/posters" className="nav-link">Posters</Link>
         <Link href="/stickers" className="nav-link">Stickers</Link>
         <Link href="/news" className="nav-link">News</Link>
         <Link href="/predict" className="nav-link" style={{ color: 'var(--red)' }}>The Bet</Link>
