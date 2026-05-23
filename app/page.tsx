@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PRODUCTS } from '@/lib/products';
 import DesignVisual from '@/components/DesignVisual';
+import MobileProductScroller from '@/components/MobileProductScroller';
 
 const orgLd = {
   '@context': 'https://schema.org',
@@ -30,6 +31,9 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }} />
+
+      {/* Mobile-only product swipe carousel — first thing users see on phones */}
+      <MobileProductScroller />
       {/* HERO */}
       <section className="hero">
         <div className="hero-stamp">
