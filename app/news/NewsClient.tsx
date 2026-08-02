@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { NEWS_ITEMS } from '@/lib/news';
+import { NEWS_ITEMS, type NewsItem } from '@/lib/news';
 
 const FILTERS = [
   { id: 'all', label: 'Everything' },
@@ -21,6 +21,20 @@ function formatDate(iso: string) {
     });
   } catch {
     return iso;
+  }
+}
+
+// Prefer an explicit logo on the item; otherwise derive the publisher's favicon
+// from its own URL. Google-redirect URLs (bot items without a stored logo) yield
+// nothing useful, so skip them and let the card render logo-less.
+function logoFor(item: NewsItem): string | null {
+  if (item.image) return item.image;
+  try {
+    const host = new URL(item.url).hostname;
+    if (host.endsWith('google.com')) return null;
+    return `https://www.google.com/s2/favicons?domain=${host}&sz=64`;
+  } catch {
+    return null;
   }
 }
 
@@ -83,11 +97,22 @@ export default function NewsClient() {
             className="news-card"
           >
             <div className="news-card-top">
-              <span
-                className="news-card-badge"
-                style={{ background: badgeColorFor(item.sourceType) }}
-              >
-                {item.source}
+              <span className="news-card-source">
+                {logoFor(item) && (
+                  <img
+                    className="news-card-logo"
+                    src={logoFor(item) as string}
+                    alt=""
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  />
+                )}
+                <span
+                  className="news-card-badge"
+                  style={{ background: badgeColorFor(item.sourceType) }}
+                >
+                  {item.source}
+                </span>
               </span>
               <span className="news-card-date">{formatDate(item.date)}</span>
             </div>

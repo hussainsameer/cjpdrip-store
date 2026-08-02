@@ -68,6 +68,7 @@ function parseRSS(xml) {
       pubDate: cleanText(matchOne(it, /<pubDate>([\s\S]*?)<\/pubDate>/)),
       description: cleanText(matchOne(it, /<description>([\s\S]*?)<\/description>/)),
       source: cleanText(matchOne(it, /<source[^>]*>([\s\S]*?)<\/source>/)),
+      sourceUrl: cleanText(matchOne(it, /<source[^>]*url="([^"]+)"/)),
     });
   }
   return items;
@@ -94,6 +95,18 @@ function isoDate(s) {
 function isRelevant(title) {
   const t = (title || '').toLowerCase();
   return RELEVANCE_KEYWORDS.some((k) => t.includes(k));
+}
+
+// Build a reliable publisher-logo URL from the RSS <source url="..."> domain.
+// Google News RSS carries no per-article image, but each item names its source.
+function logoUrl(sourceUrl) {
+  if (!sourceUrl) return '';
+  try {
+    const host = new URL(sourceUrl).hostname;
+    return `https://www.google.com/s2/favicons?domain=${host}&sz=64`;
+  } catch {
+    return '';
+  }
 }
 
 function tsLiteral(value) {
@@ -154,6 +167,7 @@ async function main() {
     // Google News RSS descriptions are just HTML-wrapped title repeats — use a
     // generic blurb instead so the news page stays clean.
     const blurb = `Read the full story on ${source}.`;
+    const image = logoUrl(item.sourceUrl);
 
     return `  {
     id: ${tsLiteral(candidate)},
@@ -163,7 +177,7 @@ async function main() {
     title: ${tsLiteral(item.title)},
     blurb: ${tsLiteral(blurb)},
     url: ${tsLiteral(item.link)},
-    external: true,
+    external: true,${image ? `\n    image: ${tsLiteral(image)},` : ''}
   },`;
   });
 

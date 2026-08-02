@@ -7,6 +7,7 @@ export type NewsItem = {
   blurb: string;
   url: string;
   external?: boolean;
+  image?: string; // source/publisher logo; falls back to favicon derived from url
 };
 
 export const NEWS_ITEMS: NewsItem[] = [

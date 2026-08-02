@@ -1305,6 +1305,17 @@ img { display: block; max-width: 100%; }
   background: var(--cream-dark);
 }
 .news-card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.news-card-source { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.news-card-logo {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  padding: 2px;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  background: var(--cream);
+  object-fit: contain;
+}
 .news-card-badge {
   display: inline-block;
   padding: 4px 10px;
