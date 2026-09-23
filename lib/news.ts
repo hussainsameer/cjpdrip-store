@@ -29371,5 +29371,15 @@ export const NEWS_ITEMS: NewsItem[] = [
     url: "https://news.google.com/rss/articles/CBMigAJBVV95cUxPdmNPaHMzOVpWaTAycF93czFQVjc4dTI1NWZURF9ZV1FuRFBBZDJ0c1NPSGRlNDBmLTlPSk4wNm1mbXJCRVM5V3RLbEFhYzNjNXZBNzM5aHE2bXdTZUF6XzZxYXZqVlpvYXZ5SDF1SWN1eEFzb0MzTTJkOVhqSHhiUnYwaGZlUVYxY3FMRTBwUVF1X0JnbGU1dmhFbjZMRDhZM3ktTmxyVF9jb2xIRmtLYkEtM2ZJWWhHN3k4UTRRc1lGd1RRWkJJbFBZZ3JXSGFpVGFGQndmZkNMNEUwRzhLUVJGS1c2UHVfb0FjRkRyWGVBLUtBb25xSURzZlBPcWVL?oc=5",
     external: true,
   },
+    {
+    id: "gyanesh-it-s-done-bro-cjp-to-take-up-issue-of-ec-reforms-ami",
+    date: "2026-09-23",
+    source: "The New Indian Express",
+    sourceType: 'press',
+    title: "'Gyanesh, it's done bro': CJP to take up issue of EC reforms amid reports of objections by two commissioners - The New Indian Express",
+    blurb: "Read the full story on The New Indian Express.",
+    url: "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQeTJwVXZrWEgyX01HSWJvdHA5Sm5fdUN4djJWTzJ1eHRlakxLUUFTMzMxYU1uNVJYaGlDUlNfRVAwSTFxVWM5MXVnS3hNWkRCT1ZSNVYxZXhITmRpUkY1MFEzRnBLR3RhbTFEVk52R1RfS1NyYk92T2lyZTJqNkFURHJEeXVoaFUwTUY4cmJCV3hucUhlZXFSMmRtY2hTMUpfeTEyTnh5YjBsVllKQl81MV8yakFkSHMtZUE0RFhTSnRmV3lpWWlLeWJac2UydWFmRlBNbEdQdDAzQ1VyQnVmTHdVcVJmNnoxdGfSAfcBQVVfeXFMUHMtME4ybWZaR3dnbTJCeFJGbmNZZHlRenJYellEYUVaOWMwYkZFbXp3Wk5tSWFmRnFCemNvOC1JSjA4dm8tR3kxUk5STjB6Rm9EWGoteWp1ZUo4X1h6Y0tnY1puYWllR0lZd1hiTGVYRERKbUl4OG8wRlJSUzhmVGdBbUwtYXVJQnNHdF9yOWRIRDA2djNlekFJU0JSaGxUNXdReW1SdG4wLXpwdldJMVJpLUlvNDZUNTdkM3hUREpqbDhuQzBxb1dRcnR1VzREVmZzNUZ5cm1UQWtQSWtVYXJaOXFKaXJBQW1vSFE4UmdGc1IzNHVZVQ?oc=5",
+    external: true,
+  },
   // AUTO_NEWS_BELOW — the bot appends new items here. Do not remove this marker.
 ];
