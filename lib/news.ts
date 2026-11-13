@@ -41301,5 +41301,25 @@ export const NEWS_ITEMS: NewsItem[] = [
     url: "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaWxDMHZtandaNThac2FtNnNSaVVXbE53al9fZThQeU9OaGFGNzRNZE9mNk01d1EyX0s2ZDNRWFBaZk1rYXN0NEY2UkhaZVFWdFRnWTFOUDExRUlyWHZQTW0xcUFvQVpFbDdPQ0tkcHJfQlMyZEVCSGRtMEQ0b2VrYWFYcGtEYWlQUDNuTU1IbGxEbEptS2tWSmliVUhlU1JmRWdtNtIBrAFBVV95cUxNWGdtTFEtNEhhSDdzUGl2WVNjTTNnQzFIeVRkci1fMEVRN2IzRTAyckxST01TTWtleEY3NjJjWmliU2FzYk9BSWhuVFV0R2FrZHpDbzdMRENtbW1hdmJtTHRGcVJtdFBWTy1SRnZLTFZuWjhIODNBZjJObFlSZGI0WTB2ZVpHM3dxLWcxeEVLWjdaOUF6ZDdWY09ZSE05OEtVS2RwU3dzTEtYbHM1?oc=5",
     external: true,
   },
+    {
+    id: "cockroach-party-holds-protest-in-india",
+    date: "2026-06-06",
+    source: "香港電台新聞網",
+    sourceType: 'press',
+    title: "'Cockroach Party' holds protest in India - 香港電台新聞網",
+    blurb: "Read the full story on 香港電台新聞網.",
+    url: "https://news.google.com/rss/articles/CBMib0FVX3lxTE0tX2RtNHNmdWM2RGtKVXJmOTF6emFkaUswa1RKV0RIR1ZPejUzbUFjVG9jd3NwdXc4UmdtS0xPQXlhOFVpUWF0TFg3dEdmX0o4UWNEb2ZVdXFBVDV1d2VuSzNWZndvTkMyXzhBWFladw?oc=5",
+    external: true,
+  },
+  {
+    id: "cockroach-janta-party-surpasses-bjp-on-instagram-abki-baar-1",
+    date: "2026-05-21",
+    source: "Livemint",
+    sourceType: 'press',
+    title: "Cockroach Janta Party surpasses BJP on Instagram: ‘Abki baar 10 million paar,’ jokes Internet - Livemint",
+    blurb: "Read the full story on Livemint.",
+    url: "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQWWF3UkxxaDZEbnYySzUwOEFlYzl5S1BEdHdheGdoRG5DVm5LVzZRY0VFbndQNGFaZFlYc0x6Y2Y5QUlRakpiaWNCanRmU1gzWnZPNFlYMnd6cjF5d2tSQUY3ZU9sQ3kyWWhqLWFYQ3BBQXAyUWhfU21JWXJsQ0RLVGQwdVFpNjhGdjI0eXNBOUtEcTFONU5jODlFZUxjanNFN1RteFBDM0x6dWxQeTRKQXp1Qm51V1RBV0x1N0NZVU5sLWRIeTJaZE1LUHJFaW15NHdLb1ZpZWFaZjdQR19xNHYzRUQ0RktxenJtc01DU1ltOHhqTGhESmNsTm5VMXNneHp1b2Q3MFXSAY4CQVVfeXFMUE5tS2I3UzRIN0c3ZVZBaW53ZnhmeXhnTW9NcDVRS01XVWlrS3o2am1ySEYzNEg3MWtIeERuRzZLM1Vnb2ZLNklPcFl0aEN5WF8xVEJndFI2cG1FOFVyNlJZOF9ZdUxYM3loOGEySlFuMVlWcHVsSm82ZVFEYnpoWjI5cDM4NEg2bE05YWJFOHpKemwySy1pX3g4TThqcnhTQldpNGV0M2NRQWxXWW9XRWp0NDVrODRzWTRCOGdvWVJnRUZHVmlXUXZQWXo0Rjd2aURGaFhDS3puMlN5QW1sNjUtVnJadEFUX3UzUWVkMTVBcGFLQ0FZaXFMLWhQanBNVzZ1cmhjMEd6NXhJWUVB?oc=5",
+    external: true,
+  },
   // AUTO_NEWS_BELOW — the bot appends new items here. Do not remove this marker.
 ];
