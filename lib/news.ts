@@ -41681,5 +41681,25 @@ export const NEWS_ITEMS: NewsItem[] = [
     url: "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQ0J1Y1JoNTR4TjBDTnZTaVJESC1HRWZnVUx1S29BT2l1c3VUcjJxSjlMU1lDamJUbnRXSlBlaTN1SHhIZ1QteUdBWEdCLTVkRzFCYlI1Y045cWNYZW9ueklpSkdYaktEbnpIX3Y1SzBfWkNMd1c4RjFtQVZuVzNGOHozVlBrMnV6WFhZNHdBMVVvLTgtY1NvRQ?oc=5",
     external: true,
   },
+    {
+    id: "ranka-holds-rohtak-meet-to-expand-cjp-network-in-haryana-the",
+    date: "2026-11-16",
+    source: "The Tribune",
+    sourceType: 'press',
+    title: "Ranka holds Rohtak meet to expand CJP network in Haryana - The Tribune",
+    blurb: "Read the full story on The Tribune.",
+    url: "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNVB6Tk5KQW5iNktaLXVUNmFtZ2lneVREYUdiaWVxX2x2eXhxNHlCOVBDTVJubjUzRmpjcTE1WFNfdWhRN05WZW5jaWlNcFJBR05XVWtKSVZDbHNDQjZqcWticnVEd0JURk1hbi03dnRIMFAtYjhFUlhzOE9IU1M2ZElGOUtTM0xEeElCQklsX0pmNFVXV1h0WTVSRnVOalJv0gGkAUFVX3lxTE1RNFNZb214MFVaQ2NSeVFzaG00bEFoc0s2LWh4ZmxDdkg2RFFsZWVZSjFGU3MtdXVuSGVQNldBNUplUU9Rb3RURXRXM05KU3VOU19Gbk5yd1R3ekpYaXpkaS1tSEFnVVhoZHV0ZktVN1J0WXZiN0xCXzc4Vy10TGtqZGVnLXNxcUZsOXJ5Q2J5MUVidEp1bjRNUzd6dmJ1T3dURFNJ?oc=5",
+    external: true,
+  },
+  {
+    id: "cockroach-janata-party-plans-nationwide-expansion-across-10-",
+    date: "2026-11-16",
+    source: "Tupaki English",
+    sourceType: 'press',
+    title: "Cockroach Janata Party Plans Nationwide Expansion Across 10 States | Tupaki Political - Tupaki English",
+    blurb: "Read the full story on Tupaki English.",
+    url: "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNX1B6cU5JRXBjNUk3YzNRSFhYc3FoNUxzSVBkWGR2UG9NM2JvNnByX1R5ZU0xZWtsSHgyeW9MbzNrcW9mc1VGNVhWNTl4bE4zemRNYk5jV0NvMUtrbDF4UTNDQTQxRVlieVJudlJlTUcwWkRibkg1LVRZTVd6WmJJWkRQVWxreWlkbkZVRlZrZkpYRUI0cE5hMnp6NjZGajg0aUZNWDJoNC12eGxWaUV3WXJXQkhHalJyeWg0amhTbUstZERkMnhsaDJ5WTJpQ3pF0gHWAUFVX3lxTFBBaEFsb0MxUjlHV2JpVEVKZ0xZWEF3TjdaUW9LMVdPN2otcHczbFFUSHVYYnJZSWRWODJlakVmZkM5Ykp1clR0QmFwb2Y5eUxxeHNza1JDanpzcmRCTUdnbGx5aE9QckZadFhmUmt1bG9uZkl1NmRVWFRJZ0VObHJCT25BMmFtVjJ6cmxreUlnLVFfNTNxcDNPSHlLQjhPQ3ZVOFFjVEFXTkRSaXppREo3Q3d0Nk8yMnRqQXo2RzJSMm9mdjV5WDltME41UjAzTG1fQlk3Unc?oc=5",
+    external: true,
+  },
   // AUTO_NEWS_BELOW — the bot appends new items here. Do not remove this marker.
 ];
