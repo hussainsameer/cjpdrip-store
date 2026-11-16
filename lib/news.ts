@@ -41671,5 +41671,15 @@ export const NEWS_ITEMS: NewsItem[] = [
     url: "https://news.google.com/rss/articles/CBMingFBVV95cUxQLTl0R2toY2x4ZU4zdHhyLXBGdlZRZ3VjMW5jYndXOFpCakVDR3NvY0FkV3Z2anVoX0tSUUw0U3J3dTF3eVpfbFhvU3RCUzZwYUNWNHlFWlpzYm1uMFQxLUU3RTlSMzRMWUlkdllIRDA1V3J4WnZRVGFTRkVfTExkaU5zY3NDamhjOGQ0YzZseVhnTWRiRHZ0RTVmTEdBUQ?oc=5",
     external: true,
   },
+    {
+    id: "efficient-law-order-management-success-by-goi-over-cjp-unres",
+    date: "2026-11-15",
+    source: "IBG News",
+    sourceType: 'press',
+    title: "Efficient Law & Order Management Success by GOI Over CJP Unrest? - IBG News",
+    blurb: "Read the full story on IBG News.",
+    url: "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQ0J1Y1JoNTR4TjBDTnZTaVJESC1HRWZnVUx1S29BT2l1c3VUcjJxSjlMU1lDamJUbnRXSlBlaTN1SHhIZ1QteUdBWEdCLTVkRzFCYlI1Y045cWNYZW9ueklpSkdYaktEbnpIX3Y1SzBfWkNMd1c4RjFtQVZuVzNGOHozVlBrMnV6WFhZNHdBMVVvLTgtY1NvRQ?oc=5",
+    external: true,
+  },
   // AUTO_NEWS_BELOW — the bot appends new items here. Do not remove this marker.
 ];
